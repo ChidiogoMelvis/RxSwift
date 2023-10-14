@@ -1,2 +1,2 @@
 # RxSwift
-A Reactive Programming Framework in Swift, I will be creating a Food Vendor App using this powerful framework to achieve a smooth user event-based experience asynchronously and data flows. This will be created using SwiftUI Framework in iOS.
+A Reactive Programming Framework in Swift, I will be creating a Food Vendor App using this powerful framework to achieve a smooth user event-based experience asynchronously and use of data flows. This will be created using SwiftUI Framework in iOS.

@@ -14,8 +14,10 @@
 		04A1E42F2ADB4DB4008EDE43 /* RxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1E42E2ADB4DB4008EDE43 /* RxSwiftTests.swift */; };
 		04A1E4392ADB4DB5008EDE43 /* RxSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1E4382ADB4DB5008EDE43 /* RxSwiftUITests.swift */; };
 		04A1E43B2ADB4DB5008EDE43 /* RxSwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1E43A2ADB4DB5008EDE43 /* RxSwiftUITestsLaunchTests.swift */; };
-		04A1E44A2ADB5376008EDE43 /* SignupSigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1E4492ADB5376008EDE43 /* SignupSigninView.swift */; };
+		04A1E44A2ADB5376008EDE43 /* SignupLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1E4492ADB5376008EDE43 /* SignupLoginView.swift */; };
 		04A1E44E2ADB5C47008EDE43 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1E44D2ADB5C47008EDE43 /* Color.swift */; };
+		04A1E4502ADCB5AA008EDE43 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1E44F2ADCB5AA008EDE43 /* LoginView.swift */; };
+		04A1E4522ADCB5D3008EDE43 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1E4512ADCB5D3008EDE43 /* SignupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +48,10 @@
 		04A1E4342ADB4DB4008EDE43 /* RxSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A1E4382ADB4DB5008EDE43 /* RxSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftUITests.swift; sourceTree = "<group>"; };
 		04A1E43A2ADB4DB5008EDE43 /* RxSwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		04A1E4492ADB5376008EDE43 /* SignupSigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupSigninView.swift; sourceTree = "<group>"; };
+		04A1E4492ADB5376008EDE43 /* SignupLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupLoginView.swift; sourceTree = "<group>"; };
 		04A1E44D2ADB5C47008EDE43 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		04A1E44F2ADCB5AA008EDE43 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		04A1E4512ADCB5D3008EDE43 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +104,10 @@
 			children = (
 				04A1E41D2ADB4DB3008EDE43 /* RxSwiftApp.swift */,
 				04A1E41F2ADB4DB3008EDE43 /* SplashView.swift */,
+				04A1E4492ADB5376008EDE43 /* SignupLoginView.swift */,
+				04A1E44F2ADCB5AA008EDE43 /* LoginView.swift */,
+				04A1E4512ADCB5D3008EDE43 /* SignupView.swift */,
 				04A1E44D2ADB5C47008EDE43 /* Color.swift */,
-				04A1E4492ADB5376008EDE43 /* SignupSigninView.swift */,
 				04A1E4212ADB4DB4008EDE43 /* Assets.xcassets */,
 				04A1E4232ADB4DB4008EDE43 /* Preview Content */,
 			);
@@ -263,9 +269,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A1E4522ADCB5D3008EDE43 /* SignupView.swift in Sources */,
 				04A1E4202ADB4DB3008EDE43 /* SplashView.swift in Sources */,
 				04A1E44E2ADB5C47008EDE43 /* Color.swift in Sources */,
-				04A1E44A2ADB5376008EDE43 /* SignupSigninView.swift in Sources */,
+				04A1E44A2ADB5376008EDE43 /* SignupLoginView.swift in Sources */,
+				04A1E4502ADCB5AA008EDE43 /* LoginView.swift in Sources */,
 				04A1E41E2ADB4DB3008EDE43 /* RxSwiftApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

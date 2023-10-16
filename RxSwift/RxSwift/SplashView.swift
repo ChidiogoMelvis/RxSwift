@@ -17,7 +17,7 @@ struct SplashView: View {
         
         ZStack{
             if self.isActive{
-                SignupSigninView()
+                SignupLoginView()
             } else {
                 
                 customColor.edgesIgnoringSafeArea(.all)

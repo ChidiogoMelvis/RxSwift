@@ -1,40 +1,9 @@
-////
-////  SignupSigninView.swift
-////  RxSwift
-////
-////  Created by Mac on 14/10/2023.
-////
 //
-//import SwiftUI
+//  SignupSigninView.swift
+//  RxSwift
 //
-//struct SignupLoginView: View {
-//    @State var selectedTab = 0
-//    var body: some View {
-//        NavigationView {
-//            HStack {
-//                TabView(selection: $selectedTab) {
-//                    LoginView()
-//                        .tabItem {
-//                            Text("Login")
-//                        }
-//                        .tag(0)
-//                    SignupView()
-//                        .tabItem {
-//                            Text("Sign Up")
-//                        }
-//                        .tag(1)
-//                }
+//  Created by Mac on 14/10/2023.
 //
-//            }
-//        }
-//    }
-//}
-//
-//struct SignupSigninView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SignupLoginView()
-//    }
-//}
 
 import SwiftUI
 
@@ -43,7 +12,7 @@ struct SignupLoginView: View {
     let customColor = Color(hex: 0xEDEDED)
     
     var body: some View {
-       
+        
         NavigationView {
             
             VStack {
@@ -58,7 +27,7 @@ struct SignupLoginView: View {
                         .onTapGesture {
                             selectedTab = 0
                         }
-                        
+                    
                     Text("Sign Up")
                         .font(.title)
                         .onTapGesture {
@@ -67,7 +36,7 @@ struct SignupLoginView: View {
                 }
                 if selectedTab == 0 {
                     LoginView()
-        
+                    
                 } else {
                     SignupView()
                 }

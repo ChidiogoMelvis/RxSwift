@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04086C282ADE11B500F45F09 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04086C272ADE11B500F45F09 /* HomeView.swift */; };
+		04086C2A2ADE99F400F45F09 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04086C292ADE99F400F45F09 /* CustomButton.swift */; };
+		04086C2C2ADE9A0000F45F09 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04086C2B2ADE9A0000F45F09 /* CustomTextField.swift */; };
+		04086C2F2ADE9D2300F45F09 /* SecureCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04086C2E2ADE9D2300F45F09 /* SecureCustomTextField.swift */; };
 		04A1E41E2ADB4DB3008EDE43 /* RxSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1E41D2ADB4DB3008EDE43 /* RxSwiftApp.swift */; };
 		04A1E4202ADB4DB3008EDE43 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1E41F2ADB4DB3008EDE43 /* SplashView.swift */; };
 		04A1E4222ADB4DB4008EDE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A1E4212ADB4DB4008EDE43 /* Assets.xcassets */; };
@@ -38,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04086C272ADE11B500F45F09 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		04086C292ADE99F400F45F09 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		04086C2B2ADE9A0000F45F09 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		04086C2E2ADE9D2300F45F09 /* SecureCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureCustomTextField.swift; sourceTree = "<group>"; };
 		04A1E41A2ADB4DB3008EDE43 /* RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A1E41D2ADB4DB3008EDE43 /* RxSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftApp.swift; sourceTree = "<group>"; };
 		04A1E41F2ADB4DB3008EDE43 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -79,6 +87,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04086C252ADE0FA500F45F09 /* UserViews */ = {
+			isa = PBXGroup;
+			children = (
+				04A1E44F2ADCB5AA008EDE43 /* LoginView.swift */,
+				04A1E4512ADCB5D3008EDE43 /* SignupView.swift */,
+			);
+			path = UserViews;
+			sourceTree = "<group>";
+		};
+		04086C262ADE117900F45F09 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04A1E44D2ADB5C47008EDE43 /* Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04086C2D2ADE9A0900F45F09 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				04086C292ADE99F400F45F09 /* CustomButton.swift */,
+				04086C2B2ADE9A0000F45F09 /* CustomTextField.swift */,
+				04086C2E2ADE9D2300F45F09 /* SecureCustomTextField.swift */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
 		04A1E4112ADB4DB3008EDE43 = {
 			isa = PBXGroup;
 			children = (
@@ -105,9 +140,10 @@
 				04A1E41D2ADB4DB3008EDE43 /* RxSwiftApp.swift */,
 				04A1E41F2ADB4DB3008EDE43 /* SplashView.swift */,
 				04A1E4492ADB5376008EDE43 /* SignupLoginView.swift */,
-				04A1E44F2ADCB5AA008EDE43 /* LoginView.swift */,
-				04A1E4512ADCB5D3008EDE43 /* SignupView.swift */,
-				04A1E44D2ADB5C47008EDE43 /* Color.swift */,
+				04086C272ADE11B500F45F09 /* HomeView.swift */,
+				04086C2D2ADE9A0900F45F09 /* ReusableViews */,
+				04086C252ADE0FA500F45F09 /* UserViews */,
+				04086C262ADE117900F45F09 /* Extensions */,
 				04A1E4212ADB4DB4008EDE43 /* Assets.xcassets */,
 				04A1E4232ADB4DB4008EDE43 /* Preview Content */,
 			);
@@ -270,9 +306,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A1E4522ADCB5D3008EDE43 /* SignupView.swift in Sources */,
+				04086C282ADE11B500F45F09 /* HomeView.swift in Sources */,
 				04A1E4202ADB4DB3008EDE43 /* SplashView.swift in Sources */,
+				04086C2A2ADE99F400F45F09 /* CustomButton.swift in Sources */,
 				04A1E44E2ADB5C47008EDE43 /* Color.swift in Sources */,
 				04A1E44A2ADB5376008EDE43 /* SignupLoginView.swift in Sources */,
+				04086C2C2ADE9A0000F45F09 /* CustomTextField.swift in Sources */,
+				04086C2F2ADE9D2300F45F09 /* SecureCustomTextField.swift in Sources */,
 				04A1E4502ADCB5AA008EDE43 /* LoginView.swift in Sources */,
 				04A1E41E2ADB4DB3008EDE43 /* RxSwiftApp.swift in Sources */,
 			);

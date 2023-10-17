@@ -11,6 +11,7 @@ struct SignupView: View {
     @State var email: String = ""
     @State var password: String = ""
     @State var reEnteredPassword: String = ""
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Email address")
@@ -22,9 +23,7 @@ struct SignupView: View {
                     .frame(height: 1)
                     .foregroundColor(Color.black)
                     .padding(.horizontal, 16)
-                TextField("Enter email", text: $email)
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 5)
+                CustomTextField(email: $email, placeholder: "Enter email")
             }
             .padding(.bottom, 40)
             Text("Password")
@@ -36,9 +35,7 @@ struct SignupView: View {
                     .frame(height: 1)
                     .foregroundColor(Color.black)
                     .padding(.horizontal, 16)
-                SecureField("Enter password", text: $password)
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 5)
+                SecureCustomTextField(text: $password, placeholder: "Enter password")
             }
             
             .padding(.bottom, 40)
@@ -55,20 +52,9 @@ struct SignupView: View {
                     .padding(.horizontal, 16)
                     .padding(.bottom, 5)
             }
-            
             Spacer().frame(height: 50)
-            Button(action: {
-                //("btn tapped")
-            }) {
-               Text("Sign up")
-                    .font(.system(size: 20, weight: .medium))
-                    .foregroundColor(.white)
-                    .frame(width: 300, height: 50)
-                    .background(Color(hex: 0xFA4A0C))
-                    .cornerRadius(25)
-                    .frame(width: 300, height: 50)
-                    .controlSize(.large)
-                    .padding(.horizontal, 40)
+            CustomButton(title: "Sign up", foregroundColor: Color.white, backgroundColor: Color(hex: 0xFA4A0C)) {
+                print("Button tapped")
             }
         }
         

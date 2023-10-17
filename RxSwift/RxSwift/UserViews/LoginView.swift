@@ -23,9 +23,7 @@ struct LoginView: View {
                     .frame(height: 1)
                     .foregroundColor(Color.black)
                     .padding(.horizontal, 16)
-                TextField("Enter email", text: $email)
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 5)
+                CustomTextField(email: $email, placeholder: "Enter email")
             }
             .padding(.bottom, 50)
             Text("Password")
@@ -37,23 +35,11 @@ struct LoginView: View {
                     .frame(height: 1)
                     .foregroundColor(Color.black)
                     .padding(.horizontal, 16)
-                SecureField("Enter password", text: $password)
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 5)
+                SecureCustomTextField(text: $password, placeholder: "Enter password")
             }
-            Spacer().frame(height: 90)
-            Button(action: {
-                //("btn tapped")
-            }) {
-               Text("Login")
-                    .font(.system(size: 20, weight: .medium))
-                    .foregroundColor(.white)
-                    .frame(width: 300, height: 50)
-                    .background(Color(hex: 0xFA4A0C))
-                    .cornerRadius(25)
-                    .frame(width: 300, height: 50)
-                    .controlSize(.large)
-                    .padding(.horizontal, 40)
+            Spacer().frame(height: 50)
+            CustomButton(title: "Login", foregroundColor: Color.white, backgroundColor: Color(hex: 0xFA4A0C)) {
+                print("Button tapped")
             }
             
         }

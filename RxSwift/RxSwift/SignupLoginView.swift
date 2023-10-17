@@ -36,7 +36,7 @@ struct SignupLoginView: View {
                 }
                 if selectedTab == 0 {
                     LoginView()
-                        .padding(.top, 40)
+                        .padding(.top, 10)
                 } else {
                     SignupView()
                         .padding(.top, 10)

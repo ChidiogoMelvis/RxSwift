@@ -60,7 +60,7 @@ struct SplashView: View {
                     }) {
                        Text("Get started")
                             .font(.system(size: 20, weight: .heavy))
-                            .foregroundColor(.orange)
+                            .foregroundColor(Color(hex: 0xFA4A0C))
                             .padding(.horizontal, 20)
                             .frame(width: 300, height: 50)
                             .background(Color.white)

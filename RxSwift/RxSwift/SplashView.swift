@@ -58,7 +58,7 @@ struct SplashView: View {
                     Button(action: {
                         //("btn tapped")
                     }) {
-                       Text("Get started")
+                        Text("Get started")
                             .font(.system(size: 20, weight: .heavy))
                             .foregroundColor(Color(hex: 0xFA4A0C))
                             .padding(.horizontal, 20)

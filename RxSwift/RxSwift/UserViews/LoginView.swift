@@ -11,7 +11,7 @@ struct LoginView: View {
     
     @State var email: String = ""
     @State var password: String = ""
-
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Email address")
@@ -37,18 +37,27 @@ struct LoginView: View {
                     .padding(.horizontal, 16)
                 SecureCustomTextField(text: $password, placeholder: "Enter password")
             }
-            Spacer().frame(height: 50)
-            CustomButton(title: "Login", foregroundColor: Color.white, backgroundColor: Color(hex: 0xFA4A0C)) {
-                print("Button tapped")
+            Spacer().frame(height: 200)
+            Button(action: {
+                //("btn tapped")
+            }) {
+                Text("Login")
+                    .font(.system(size: 20, weight: .medium))
+                    .foregroundColor(Color.white)
+                    .padding(.horizontal, 20)
+                    .frame(width: 300, height: 50)
+                    .background(Color(hex: 0xFA4A0C))
+                    .cornerRadius(25)
+                    .position(x: 190)
+                    .frame(width: 300, height: 50)
+                    .controlSize(.large)
             }
-            
         }
-        
     }
 }
-    struct LoginView_Previews: PreviewProvider {
-        static var previews: some View {
-            
-            LoginView()
-        }
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        
+        LoginView()
     }
+}

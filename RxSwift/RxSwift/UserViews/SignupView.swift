@@ -52,9 +52,20 @@ struct SignupView: View {
                     .padding(.horizontal, 16)
                     .padding(.bottom, 5)
             }
-            Spacer().frame(height: 50)
-            CustomButton(title: "Sign up", foregroundColor: Color.white, backgroundColor: Color(hex: 0xFA4A0C)) {
-                print("Button tapped")
+            Spacer().frame(height: 120)
+            Button(action: {
+                //("btn tapped")
+            }) {
+                Text("Sign up")
+                    .font(.system(size: 20, weight: .medium))
+                    .foregroundColor(Color.white)
+                    .padding(.horizontal, 20)
+                    .frame(width: 300, height: 50)
+                    .background(Color(hex: 0xFA4A0C))
+                    .cornerRadius(25)
+                    .position(x: 190)
+                    .frame(width: 300, height: 50)
+                    .controlSize(.large)
             }
         }
         

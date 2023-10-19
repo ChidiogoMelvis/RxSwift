@@ -8,28 +8,27 @@
 import SwiftUI
 
 struct HomeView: View {
-    //@State var isShowingSidebar = false
-@State var presentSideMenu = false
+    
+    @State var presentSideMenu = false
+    
     var body: some View {
-        NavigationView {
-            VStack{
-                HStack {
-                    Button {
-                        presentSideMenu.toggle()
-                    } label: {
-                        Image(systemName: "text.alignleft")
-                            .resizable()
-                            .frame(width: 25, height: 20)
-                    }
-                    Spacer()
+        VStack{
+            HStack{
+                Button{
+                    presentSideMenu.toggle()
+                } label: {
+                    Image(uiImage: UIImage(systemName: "text.alignleft")!)
+                        .resizable()
+                        .frame(width: 32, height: 32)
                 }
                 Spacer()
-                Text("Home View")
-                Spacer()
             }
-            .padding(.horizontal, 24)
+            
+            Spacer()
+            Text("Home View")
+            Spacer()
         }
-        
+        .padding(.horizontal, 24)
     }
 }
 struct HomeView_Previews: PreviewProvider {
@@ -37,4 +36,22 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+
+struct SideMenu: View {
+    var body: some View {
+        HStack {
+            
+        }
+    }
+}
+
+struct MenuContents: View {
+    var body: some View {
+        VStack {
+            
+        }
+    }
+}
+
+
 

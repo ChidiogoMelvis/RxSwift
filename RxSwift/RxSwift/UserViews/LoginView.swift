@@ -37,7 +37,7 @@ struct LoginView: View {
                     .padding(.horizontal, 16)
                 SecureCustomTextField(text: $password, placeholder: "Enter password")
             }
-            Spacer().frame(height: 200)
+            Spacer().frame(height: 220)
             Button(action: {
                 //("btn tapped")
             }) {

@@ -10,23 +10,24 @@ import SwiftUI
 struct HomeView: View {
     @State var presentSidemenu = false
     var body: some View {
-        VStack{
-            HStack{
-                Button{
-                    presentSidemenu.toggle()
-                } label: {
-                    Image(uiImage: UIImage(systemName: "text.alignleft")!)
-                        .resizable()
-                        .frame(width: 32, height: 32)
-                }
-                Spacer()
+        ZStack {
+            if presentSidemenu {
+                SideMenuView(presentSidemenu: $presentSidemenu)
+                    .transition(.move(edge: .leading))
+                    .animation(.default)
             }
-            
-            Spacer()
-            Text("Home View")
-            Spacer()
+            Button (action: {
+                withAnimation {
+                    presentSidemenu.toggle()
+                }
+            }) {
+                Image(systemName: "text.alignleft")
+                    .foregroundColor(.blue)
+                    .font(.title)
+            }
+            .padding()
+            .position(x: 30, y: 30)
         }
-        .padding(.horizontal, 24)
     }
 }
 
@@ -36,36 +37,32 @@ struct HomeView_Previews: PreviewProvider {
     }
 }
 
-struct ContentView: View {
-    @State var presentSidemenu = false
+struct SideMenuView: View {
+    @Binding var presentSidemenu: Bool
     var body: some View {
-        NavigationView {
-            MenuContents()
-                .toolbar {
-                    ToolbarItem(placement: .navigation) {
-                        Button(action: {
-                            withAnimation {
-                                presentSidemenu.toggle()
-                            }
-                        }) {
-                            Image(systemName: "text.alignleft")
-                        }
-                    }
-                }
-                .navigationTitle("main content")
-            if presentSidemenu {
-                SideMenuView(presentSidemenu: $presentSidemenu)
-                    .frame(width: 250)
+        ZStack(alignment: .leading) {
+            Color.clear
+            HStack {
+                MenuContents(presentSidemenu: $presentSidemenu)
+                    .foregroundColor(.red)
+                    .padding()
+            }
+            .frame(width: 250)
+            .background(Color.blue)
+            //.offset(x: presentSidemenu ? 0 : -UIScreen.main.bounds.width/2)
+        }
+        .onTapGesture {
+            withAnimation {
+                presentSidemenu.toggle()
             }
         }
     }
 }
 
-struct SideMenuView: View {
+struct MenuContents: View {
     @Binding var presentSidemenu: Bool
     var body: some View {
         List {
-            NavigationLink("Home", destination: Text("Homeview"))
             NavigationLink("Profile", destination: Text("Profile"))
             NavigationLink("Orders", destination: Text("Orders"))
             NavigationLink("Offer and Promo", destination: Text("Offer and Promo"))
@@ -84,12 +81,6 @@ struct SideMenuView: View {
                 }
             }
         }
-    }
-}
-
-struct MenuContents: View {
-    var body: some View {
-        Text("Main content goes here")
     }
 }
 

@@ -39,8 +39,13 @@ struct HomeView_Previews: PreviewProvider {
 
 struct SideMenu: View {
     var body: some View {
-        HStack {
-            
+        List {
+            NavigationLink("Home", destination: HomeView())
+            NavigationLink("Profile", destination: Text("Profile"))
+            NavigationLink("Orders", destination: Text("Orders"))
+            NavigationLink("Offer and Promo", destination: Text("Offer and Promo"))
+            NavigationLink("Privacy policy", destination: Text("Privacy policy"))
+            NavigationLink("Security", destination: Text("Security"))
         }
     }
 }

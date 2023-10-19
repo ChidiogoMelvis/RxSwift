@@ -47,6 +47,7 @@ struct SideMenu: View {
             NavigationLink("Privacy policy", destination: Text("Privacy policy"))
             NavigationLink("Security", destination: Text("Security"))
         }
+        .listStyle(SidebarListStyle())
     }
 }
 

@@ -49,7 +49,6 @@ struct SideMenuView: View {
             }
             .frame(width: 250)
             .background(Color.blue)
-            //.offset(x: presentSidemenu ? 0 : -UIScreen.main.bounds.width/2)
         }
         .onTapGesture {
             withAnimation {
@@ -64,12 +63,23 @@ struct MenuContents: View {
     var body: some View {
         List {
             NavigationLink("Profile", destination: Text("Profile"))
+                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+                .listRowSeparator(.hidden)
             NavigationLink("Orders", destination: Text("Orders"))
+                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+                .listRowSeparator(.hidden)
             NavigationLink("Offer and Promo", destination: Text("Offer and Promo"))
+                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+                .listRowSeparator(.hidden)
             NavigationLink("Privacy policy", destination: Text("Privacy policy"))
+                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+                .listRowSeparator(.hidden)
             NavigationLink("Security", destination: Text("Security"))
+                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+                .listRowSeparator(.hidden)
         }
         .listStyle(SidebarListStyle())
+        
         .toolbar {
             ToolbarItem(placement: .navigation) {
                 Button(action: {

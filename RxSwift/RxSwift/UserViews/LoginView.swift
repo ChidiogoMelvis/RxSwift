@@ -38,7 +38,7 @@ struct LoginView: View {
                         .padding(.horizontal, 16)
                     SecureCustomTextField(text: $password, placeholder: "Enter password")
                 }
-                Spacer().frame(height: 150)
+                Spacer().frame(height: 180)
                 Button(action: {
                     isPresentNextScreen.toggle()
                 }) {
@@ -53,9 +53,10 @@ struct LoginView: View {
                         .frame(width: 300, height: 50)
                         .controlSize(.large)
                 }
-                .sheet(isPresented: $isPresentNextScreen) {
+                .fullScreenCover(isPresented: $isPresentNextScreen) {
                     HomeView()
                 }
+                
             }
         }
     }

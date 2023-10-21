@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct HomePageView: View {
     @State var presentSidemenu = false
     var body: some View {
         ZStack {
@@ -33,7 +33,7 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomePageView()
     }
 }
 

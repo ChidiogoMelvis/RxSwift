@@ -16,7 +16,7 @@ struct HomeView: View {
                     .transition(.move(edge: .leading))
                     .animation(.default)
             }
-            Button (action: {
+            Button(action: {
                 withAnimation {
                     presentSidemenu.toggle()
                 }
@@ -39,47 +39,46 @@ struct HomeView_Previews: PreviewProvider {
 
 struct SideMenuView: View {
     @Binding var presentSidemenu: Bool
+
     var body: some View {
-        ZStack(alignment: .leading) {
-            Color.clear
-            HStack {
-                MenuContents(presentSidemenu: $presentSidemenu)
-                    .foregroundColor(.red)
-                    .padding()
+        GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                Color.clear
+                HStack {
+                    MenuContents(presentSidemenu: $presentSidemenu)
+                        .foregroundColor(.red)
+                        .padding()
+                }
+                .frame(width: 250)
+                .background(Color.blue)
             }
-            .frame(width: 250)
-            .background(Color.blue)
-        }
-        .onTapGesture {
-            withAnimation {
-                presentSidemenu.toggle()
-            }
+            .gesture(
+                DragGesture()
+                    .onEnded { value in
+                        if value.translation.width < -100 {
+                            withAnimation {
+                                presentSidemenu = false
+                            }
+                        }
+                    }
+            )
+            .frame(width: geometry.size.width)
         }
     }
 }
 
 struct MenuContents: View {
     @Binding var presentSidemenu: Bool
+
     var body: some View {
         List {
             NavigationLink("Profile", destination: Text("Profile"))
-                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-                .listRowSeparator(.hidden)
             NavigationLink("Orders", destination: Text("Orders"))
-                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-                .listRowSeparator(.hidden)
             NavigationLink("Offer and Promo", destination: Text("Offer and Promo"))
-                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-                .listRowSeparator(.hidden)
             NavigationLink("Privacy policy", destination: Text("Privacy policy"))
-                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-                .listRowSeparator(.hidden)
             NavigationLink("Security", destination: Text("Security"))
-                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-                .listRowSeparator(.hidden)
         }
         .listStyle(SidebarListStyle())
-        
         .toolbar {
             ToolbarItem(placement: .navigation) {
                 Button(action: {
@@ -93,7 +92,3 @@ struct MenuContents: View {
         }
     }
 }
-
-
-
-

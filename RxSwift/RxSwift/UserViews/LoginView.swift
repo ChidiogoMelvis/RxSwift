@@ -54,7 +54,7 @@ struct LoginView: View {
                         .controlSize(.large)
                 }
                 .fullScreenCover(isPresented: $isPresentNextScreen) {
-                    HomePageView()
+                    HomeView()
                 }
                 
             }

@@ -183,6 +183,7 @@ struct TabBarView: View {
 struct HomeView: View {
     @State var presentSidemenu = false
     @State var selectedTab = 0
+    @State var searchText: String = ""
     var body: some View {
         VStack(alignment: .leading) {
             Text("Delicious \nfood for you")
@@ -192,7 +193,19 @@ struct HomeView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.black)
                 .font(.system(size: 35))
-            Spacer()
+            HStack {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.gray)
+                TextField("Search", text: $searchText)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 5)
+            }
+            .frame(width: 300, height: 30)
+            .padding()
+            .background(Color(.systemGray6))
+            .cornerRadius(30)
+            .padding()
+            //Spacer()
             ScrollableSegmentedView()
             Spacer()
         }

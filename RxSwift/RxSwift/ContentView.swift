@@ -9,33 +9,34 @@ import SwiftUI
 
 struct ContentView: View {
     @State var presentSidemenu = false
-     @State var selectedTab = 0
-
-     var body: some View {
-         NavigationView {
-             ZStack {
-                 if presentSidemenu {
-                     SideMenuView(presentSidemenu: $presentSidemenu)
-                         .transition(.move(edge: .leading))
-                         .animation(.default)
-                 }
-                 
-                 TabBarView(selectedTab: $selectedTab)
-                     .opacity(presentSidemenu ? 0 : 1)
-                 Button(action: {
-                     withAnimation {
-                         presentSidemenu.toggle()
-                     }
-                 }) {
-                     Image(systemName: "text.alignleft")
-                         .foregroundColor(.black)
-                         .font(.title)
-                 }
-                 .position(x: 30, y: 20)
-             }
-         }
-     }
- }
+    @State var selectedTab = 0
+    
+    var body: some View {
+        NavigationView {
+            ZStack {
+                if presentSidemenu {
+                    SideMenuView(presentSidemenu: $presentSidemenu)
+                        .transition(.move(edge: .leading))
+                        .animation(.default)
+                    
+                }
+                
+                TabBarView(selectedTab: $selectedTab)
+                    .opacity(presentSidemenu ? 0 : 1)
+                Button(action: {
+                    withAnimation {
+                        presentSidemenu.toggle()
+                    }
+                }) {
+                    Image(systemName: "text.alignleft")
+                        .foregroundColor(.black)
+                        .font(.title)
+                }
+                .position(x: 30, y: 20)
+            }
+        }
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -47,28 +48,15 @@ struct SideMenuView: View {
     @Binding var presentSidemenu: Bool
     
     var body: some View {
-        GeometryReader { geometry in
-            ZStack(alignment: .leading) {
-                Color.clear
-                HStack {
-                    MenuContents(presentSidemenu: $presentSidemenu)
-                        .padding()
-                }
-                .frame(width: 250)
-                .background(Color.blue)
-                .padding(.top, 50)
+        ZStack(alignment: .leading) {
+            Color.clear
+            HStack {
+                MenuContents(presentSidemenu: $presentSidemenu)
+                    .padding()
             }
-            .gesture(
-                DragGesture()
-                    .onEnded { value in
-                        if value.translation.width < -100 {
-                            withAnimation {
-                                presentSidemenu = false
-                            }
-                        }
-                    }
-            )
-            .frame(width: geometry.size.width)
+            .frame(width: 250, height: .infinity)
+            .background(Color(hex: 0xFA4A0C))
+            .padding(.top, 50)
         }
     }
 }
@@ -178,7 +166,7 @@ struct TabBarView: View {
             HeartView()
                 .tabItem {
                     Image(uiImage: UIImage(named: "heart")!)
-                    }
+                }
             UserView()
                 .tabItem {
                     Image(uiImage: UIImage(named: "user")!)
@@ -202,11 +190,11 @@ struct HomeView: View {
                     .transition(.move(edge: .leading))
                     .animation(.default)
             }
-                VStack {
-                    Spacer()
-                    ScrollableSegmentedView()
-                    Spacer()
-                }
+            VStack {
+                Spacer()
+                ScrollableSegmentedView()
+                Spacer()
+            }
         }
     }
 }

@@ -184,17 +184,10 @@ struct HomeView: View {
     @State var presentSidemenu = false
     
     var body: some View {
-        ZStack {
-            if presentSidemenu {
-                SideMenuView(presentSidemenu: $presentSidemenu)
-                    .transition(.move(edge: .leading))
-                    .animation(.default)
-            }
-            VStack {
-                Spacer()
-                ScrollableSegmentedView()
-                Spacer()
-            }
+        VStack {
+            Spacer()
+            ScrollableSegmentedView()
+            Spacer()
         }
     }
 }

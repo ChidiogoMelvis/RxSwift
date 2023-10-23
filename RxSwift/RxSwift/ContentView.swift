@@ -182,7 +182,7 @@ struct TabBarView: View {
 
 struct HomeView: View {
     @State var presentSidemenu = false
-    
+    @State var selectedTab = 0
     var body: some View {
         VStack {
             Spacer()

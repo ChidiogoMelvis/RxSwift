@@ -32,6 +32,7 @@ struct SignupLoginView: View {
                             selectedTab = 1
                         }
                 }
+                
                 if selectedTab == 0 {
                     LoginView()
                         .padding(.top, 10)
@@ -39,10 +40,8 @@ struct SignupLoginView: View {
                     SignupView()
                         .padding(.top, 10)
                 }
-                
                 Spacer()
             }
-            
         }
     }
 }

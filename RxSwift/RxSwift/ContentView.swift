@@ -14,7 +14,7 @@ struct ContentView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }

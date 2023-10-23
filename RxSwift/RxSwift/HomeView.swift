@@ -25,8 +25,13 @@ struct HomeView: View {
                     .foregroundColor(.black)
                     .font(.title)
             }
-            .padding()
             .position(x: 30, y: 20)
+            
+            VStack {
+                Spacer()
+                ContentView()
+                Spacer()
+            }
         }
     }
 }
@@ -39,7 +44,7 @@ struct HomeView_Previews: PreviewProvider {
 
 struct SideMenuView: View {
     @Binding var presentSidemenu: Bool
-
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
@@ -70,7 +75,7 @@ struct SideMenuView: View {
 
 struct MenuContents: View {
     @Binding var presentSidemenu: Bool
-
+    
     var body: some View {
         List {
             ZStack {
@@ -113,4 +118,56 @@ struct MenuContents: View {
         }
     }
 }
-//.background(Color(hex: 0xFA4A0C))
+
+
+struct SegmentedControlView: View {
+    @Binding var selectedTab: Int
+    let segmentNames: [String]
+
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 50) {
+                ForEach(0..<segmentNames.count, id: \.self) { index in
+                    Text(segmentNames[index])
+                        .font(.headline)
+                        .padding(10)
+                        .foregroundColor(selectedTab == index ? Color(hex: 0xFA4A0C) : .gray)
+                        .cornerRadius(10)
+                        .onTapGesture {
+                            selectedTab = index
+                        }
+                }
+            }
+            .padding(10)
+        }
+    }
+}
+
+
+struct ContentView: View {
+    @State private var selectedTab = 0
+
+    var body: some View {
+        VStack {
+            SegmentedControlView(selectedTab: $selectedTab, segmentNames: ["Food", "Drinks", "Snacks", "Sauce"])
+
+            if selectedTab == 0 {
+                Text("Food")
+                    .font(.title)
+                    .padding()
+            } else if selectedTab == 1 {
+                Text("Drinks")
+                    .font(.title)
+                    .padding()
+            } else if selectedTab == 2 {
+                Text("Snacks")
+                    .font(.title)
+                    .padding()
+            } else {
+                Text("Sauce")
+                    .font(.title)
+                    .padding()
+            }
+        }
+    }
+}

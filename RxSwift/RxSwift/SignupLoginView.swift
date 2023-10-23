@@ -12,9 +12,7 @@ struct SignupLoginView: View {
     let customColor = Color(hex: 0xEDEDED)
     
     var body: some View {
-        
         NavigationView {
-            
             VStack {
                 Spacer().frame(height: 70)
                 Image(uiImage: UIImage(named: "appLogo")!)

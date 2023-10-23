@@ -184,7 +184,14 @@ struct HomeView: View {
     @State var presentSidemenu = false
     @State var selectedTab = 0
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            Text("Delicious \nfood for you")
+                .padding(.top, 80)
+                .padding(.leading, 20)
+                .lineLimit(2)
+                .fontWeight(.bold)
+                .foregroundColor(.black)
+                .font(.system(size: 35))
             Spacer()
             ScrollableSegmentedView()
             Spacer()

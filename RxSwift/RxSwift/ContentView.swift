@@ -8,11 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selectedTab = 0
-    var body: some View {
-        TabBarView(selectedTab: $selectedTab)
-    }
-}
+    @State var presentSidemenu = false
+     @State var selectedTab = 0
+
+     var body: some View {
+         NavigationView {
+             ZStack {
+                 if presentSidemenu {
+                     SideMenuView(presentSidemenu: $presentSidemenu)
+                         .transition(.move(edge: .leading))
+                         .animation(.default)
+                 }
+                 
+                 TabBarView(selectedTab: $selectedTab)
+                     .opacity(presentSidemenu ? 0 : 1)
+                 Button(action: {
+                     withAnimation {
+                         presentSidemenu.toggle()
+                     }
+                 }) {
+                     Image(systemName: "text.alignleft")
+                         .foregroundColor(.black)
+                         .font(.title)
+                 }
+                 .position(x: 30, y: 20)
+             }
+         }
+     }
+ }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -29,8 +52,6 @@ struct SideMenuView: View {
                 Color.clear
                 HStack {
                     MenuContents(presentSidemenu: $presentSidemenu)
-                        .background(Color(hex: 0xFA4A0C))
-                        .foregroundColor(.red)
                         .padding()
                 }
                 .frame(width: 250)
@@ -59,7 +80,7 @@ struct MenuContents: View {
         List {
             ZStack {
                 NavigationLink("Profile", destination: Text("Profile"))
-                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
                     .listRowSeparator(.hidden)
             }
             ZStack {
@@ -86,13 +107,6 @@ struct MenuContents: View {
         .listStyle(SidebarListStyle())
         .toolbar {
             ToolbarItem(placement: .navigation) {
-                Button(action: {
-                    withAnimation {
-                        presentSidemenu.toggle()
-                    }
-                }) {
-                    Image(systemName: "text.alignleft")
-                }
             }
         }
     }
@@ -180,29 +194,19 @@ struct TabBarView: View {
 
 struct HomeView: View {
     @State var presentSidemenu = false
+    
     var body: some View {
         ZStack {
             if presentSidemenu {
-                //SideMenuView(presentSidemenu: $presentSidemenu)
-                    //.transition(.move(edge: .leading))
-                    //.animation(.default)
+                SideMenuView(presentSidemenu: $presentSidemenu)
+                    .transition(.move(edge: .leading))
+                    .animation(.default)
             }
-            Button(action: {
-                withAnimation {
-                    presentSidemenu.toggle()
+                VStack {
+                    Spacer()
+                    ScrollableSegmentedView()
+                    Spacer()
                 }
-            }) {
-                Image(systemName: "text.alignleft")
-                    .foregroundColor(.black)
-                    .font(.title)
-            }
-            .position(x: 30, y: 20)
-            
-            VStack {
-                Spacer()
-                ScrollableSegmentedView()
-                Spacer()
-            }
         }
     }
 }

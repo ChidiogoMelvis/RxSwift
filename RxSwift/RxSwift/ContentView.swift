@@ -7,38 +7,16 @@
 
 import SwiftUI
 
-struct HomeView: View {
-    @State var presentSidemenu = false
+struct ContentView: View {
+    @State var selectedTab = 0
     var body: some View {
-        ZStack {
-            if presentSidemenu {
-                SideMenuView(presentSidemenu: $presentSidemenu)
-                    .transition(.move(edge: .leading))
-                    .animation(.default)
-            }
-            Button(action: {
-                withAnimation {
-                    presentSidemenu.toggle()
-                }
-            }) {
-                Image(systemName: "text.alignleft")
-                    .foregroundColor(.black)
-                    .font(.title)
-            }
-            .position(x: 30, y: 20)
-            
-            VStack {
-                Spacer()
-                ContentView()
-                Spacer()
-            }
-        }
+        TabBarView(selectedTab: $selectedTab)
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        ContentView()
     }
 }
 
@@ -123,7 +101,7 @@ struct MenuContents: View {
 struct SegmentedControlView: View {
     @Binding var selectedTab: Int
     let segmentNames: [String]
-
+    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 50) {
@@ -144,13 +122,13 @@ struct SegmentedControlView: View {
 }
 
 
-struct ContentView: View {
+struct ScrollableSegmentedView: View {
     @State private var selectedTab = 0
-
+    
     var body: some View {
         VStack {
             SegmentedControlView(selectedTab: $selectedTab, segmentNames: ["Food", "Drinks", "Snacks", "Sauce"])
-
+            
             if selectedTab == 0 {
                 Text("Food")
                     .font(.title)
@@ -169,5 +147,80 @@ struct ContentView: View {
                     .padding()
             }
         }
+    }
+}
+
+struct TabBarView: View {
+    @Binding var selectedTab: Int
+    var body: some View {
+        TabView {
+            HomeView()
+                .tag(0)
+                .tabItem {
+                    Image(uiImage: UIImage(named: "home")!)
+                        .foregroundColor(selectedTab == 0 ? Color(hex: 0xFA4A0C) : .gray)
+                }
+            HeartView()
+                .tabItem {
+                    Image(uiImage: UIImage(named: "heart")!)
+                    }
+            UserView()
+                .tabItem {
+                    Image(uiImage: UIImage(named: "user")!)
+                }
+            UserHistoryView()
+                .tabItem {
+                    Image(uiImage: UIImage(named: "userHistory")!)
+                }
+        }
+        .accentColor(Color(hex: 0xFA4A0C))
+    }
+}
+
+struct HomeView: View {
+    @State var presentSidemenu = false
+    var body: some View {
+        ZStack {
+            if presentSidemenu {
+                SideMenuView(presentSidemenu: $presentSidemenu)
+                    .transition(.move(edge: .leading))
+                    .animation(.default)
+            }
+            Button(action: {
+                withAnimation {
+                    presentSidemenu.toggle()
+                }
+            }) {
+                Image(systemName: "text.alignleft")
+                    .foregroundColor(.black)
+                    .font(.title)
+            }
+            .position(x: 30, y: 20)
+            
+            VStack {
+                Spacer()
+                ScrollableSegmentedView()
+                Spacer()
+            }
+        }
+    }
+}
+
+
+struct HeartView: View {
+    var body: some View {
+        Text("")
+    }
+}
+
+struct UserView: View {
+    var body: some View {
+        Text("")
+    }
+}
+
+struct UserHistoryView: View {
+    var body: some View {
+        Text("")
     }
 }

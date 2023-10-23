@@ -34,6 +34,7 @@ struct SideMenuView: View {
                         .padding()
                 }
                 .frame(width: 250)
+                .background(Color.blue)
                 .padding(.top, 50)
             }
             .gesture(
@@ -182,9 +183,9 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             if presentSidemenu {
-                SideMenuView(presentSidemenu: $presentSidemenu)
-                    .transition(.move(edge: .leading))
-                    .animation(.default)
+                //SideMenuView(presentSidemenu: $presentSidemenu)
+                    //.transition(.move(edge: .leading))
+                    //.animation(.default)
             }
             Button(action: {
                 withAnimation {

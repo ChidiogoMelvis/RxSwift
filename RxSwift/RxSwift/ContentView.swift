@@ -61,36 +61,95 @@ struct SideMenuView: View {
     }
 }
 
+//struct MenuContents: View {
+//    @Binding var presentSidemenu: Bool
+//
+//    var body: some View {
+//        List {
+//            ZStack {
+//                NavigationLink("Profile", destination: Text("Profile"))
+//                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+//                    .listRowSeparator(.hidden)
+//            }
+//            ZStack {
+//                NavigationLink("Orders", destination: Text("Orders"))
+//                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+//                    .listRowSeparator(.hidden)
+//            }
+//            ZStack {
+//                NavigationLink("Offer and Promo", destination: Text("Offer and Promo"))
+//                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+//                    .listRowSeparator(.hidden)
+//            }
+//            ZStack {
+//                NavigationLink("Privacy policy", destination: Text("Privacy policy"))
+//                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+//                    .listRowSeparator(.hidden)
+//            }
+//            ZStack {
+//                NavigationLink("Security", destination: Text("Security"))
+//                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+//                    .listRowSeparator(.hidden)
+//            }
+//        }
+//        .listStyle(SidebarListStyle())
+//        .toolbar {
+//            ToolbarItem(placement: .navigation) {
+//            }
+//        }
+//    }
+//}
+
 struct MenuContents: View {
     @Binding var presentSidemenu: Bool
-    
+
     var body: some View {
         List {
-            ZStack {
-                NavigationLink("Profile", destination: Text("Profile"))
-                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
-                    .listRowSeparator(.hidden)
+            NavigationLink(destination: Text("Profile")) {
+                HStack {
+                    Image(uiImage: UIImage(named: "profile")!)
+                    Text("Profile")
+                }
+                
             }
-            ZStack {
-                NavigationLink("Orders", destination: Text("Orders"))
-                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-                    .listRowSeparator(.hidden)
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+            .listRowSeparator(.hidden)
+
+            NavigationLink(destination: Text("Orders")) {
+                HStack {
+                    Image(uiImage: UIImage(named: "order")!)
+                    Text("Orders")
+                }
             }
-            ZStack {
-                NavigationLink("Offer and Promo", destination: Text("Offer and Promo"))
-                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-                    .listRowSeparator(.hidden)
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+            .listRowSeparator(.hidden)
+
+            NavigationLink(destination: Text("Offer and Promo")) {
+                HStack {
+                    Image(uiImage: UIImage(named: "offer")!)
+                    Text("Offer and Promo")
+                }
             }
-            ZStack {
-                NavigationLink("Privacy policy", destination: Text("Privacy policy"))
-                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-                    .listRowSeparator(.hidden)
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+            .listRowSeparator(.hidden)
+
+            NavigationLink(destination: Text("Privacy policy")) {
+                HStack {
+                    Image(uiImage: UIImage(named: "privacy")!)
+                    Text("Privacy policy")
+                }
             }
-            ZStack {
-                NavigationLink("Security", destination: Text("Security"))
-                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-                    .listRowSeparator(.hidden)
+            .listRowInsets(EdgeInsets(top:0, leading: 0, bottom: 50, trailing: 0))
+            .listRowSeparator(.hidden)
+
+            NavigationLink(destination: Text("Security")) {
+                HStack {
+                    Image(systemName: "security")
+                    Text("Security")
+                }
             }
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+            .listRowSeparator(.hidden)
         }
         .listStyle(SidebarListStyle())
         .toolbar {
@@ -193,7 +252,7 @@ struct HomeView: View {
                 .fontWeight(.bold)
                 .foregroundColor(.black)
                 .font(.system(size: 35))
-            HStack {
+            HStack(alignment: .center) {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.gray)
                 TextField("Search", text: $searchText)
@@ -205,7 +264,6 @@ struct HomeView: View {
             .background(Color(.systemGray6))
             .cornerRadius(30)
             .padding()
-            //Spacer()
             ScrollableSegmentedView()
             Spacer()
         }

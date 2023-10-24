@@ -12,8 +12,6 @@ struct ContentView: View {
     @State var selectedTab = 0
     
     var body: some View {
-//        Color(hex: 0xEDEDED)
-//            .edgesIgnoringSafeArea(.all)
         NavigationView {
             ZStack {
                 if presentSidemenu {
@@ -155,7 +153,6 @@ struct SegmentedControlView: View {
     }
 }
 
-
 struct ScrollableSegmentedView: View {
     @State private var selectedTab = 0
     
@@ -164,25 +161,50 @@ struct ScrollableSegmentedView: View {
             SegmentedControlView(selectedTab: $selectedTab, segmentNames: ["Food", "Drinks", "Snacks", "Sauce"])
             
             if selectedTab == 0 {
-                Text("Food")
-                    .font(.title)
-                    .padding()
+                FoodView()
             } else if selectedTab == 1 {
-                Text("Drinks")
-                    .font(.title)
-                    .padding()
+                DrinksView()
             } else if selectedTab == 2 {
-                Text("Snacks")
-                    .font(.title)
-                    .padding()
+                SnacksView()
             } else {
-                Text("Sauce")
-                    .font(.title)
-                    .padding()
+                SauceView()
             }
         }
     }
 }
+
+struct FoodView: View {
+    var body: some View {
+        Text("Food View")
+            .font(.title)
+            .padding()
+    }
+}
+
+struct DrinksView: View {
+    var body: some View {
+        Text("Drinks View")
+            .font(.title)
+            .padding()
+    }
+}
+
+struct SnacksView: View {
+    var body: some View {
+        Text("Snacks View")
+            .font(.title)
+            .padding()
+    }
+}
+
+struct SauceView: View {
+    var body: some View {
+        Text("Sauce View")
+            .font(.title)
+            .padding()
+    }
+}
+
 
 struct TabBarView: View {
     @Binding var selectedTab: Int

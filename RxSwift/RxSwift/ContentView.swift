@@ -12,6 +12,8 @@ struct ContentView: View {
     @State var selectedTab = 0
     
     var body: some View {
+//        Color(hex: 0xEDEDED)
+//            .edgesIgnoringSafeArea(.all)
         NavigationView {
             ZStack {
                 if presentSidemenu {
@@ -243,18 +245,24 @@ struct HomeView: View {
 
 struct HeartView: View {
     var body: some View {
-        Text("")
+        Color.red
+            .edgesIgnoringSafeArea(.all)
+        //Text("")
     }
 }
 
 struct UserView: View {
     var body: some View {
-        Text("")
+        Color.brown
+            .edgesIgnoringSafeArea(.all)
+        //Text("")
     }
 }
 
 struct UserHistoryView: View {
     var body: some View {
-        Text("")
+        Color.pink
+            .edgesIgnoringSafeArea(.all)
+        //Text("")
     }
 }

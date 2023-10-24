@@ -12,6 +12,9 @@ struct SignupLoginView: View {
     let customColor = Color(hex: 0xEDEDED)
     
     var body: some View {
+        Color(hex: 0xEDEDED)
+            .edgesIgnoringSafeArea(.all)
+            .overlay(
         NavigationView {
             VStack {
                 Spacer().frame(height: 70)
@@ -42,7 +45,7 @@ struct SignupLoginView: View {
                 }
                 Spacer()
             }
-        }
+        })
     }
 }
 

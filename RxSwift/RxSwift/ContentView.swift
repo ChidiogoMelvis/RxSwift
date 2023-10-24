@@ -61,94 +61,64 @@ struct SideMenuView: View {
     }
 }
 
-//struct MenuContents: View {
-//    @Binding var presentSidemenu: Bool
-//
-//    var body: some View {
-//        List {
-//            ZStack {
-//                NavigationLink("Profile", destination: Text("Profile"))
-//                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
-//                    .listRowSeparator(.hidden)
-//            }
-//            ZStack {
-//                NavigationLink("Orders", destination: Text("Orders"))
-//                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-//                    .listRowSeparator(.hidden)
-//            }
-//            ZStack {
-//                NavigationLink("Offer and Promo", destination: Text("Offer and Promo"))
-//                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-//                    .listRowSeparator(.hidden)
-//            }
-//            ZStack {
-//                NavigationLink("Privacy policy", destination: Text("Privacy policy"))
-//                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-//                    .listRowSeparator(.hidden)
-//            }
-//            ZStack {
-//                NavigationLink("Security", destination: Text("Security"))
-//                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-//                    .listRowSeparator(.hidden)
-//            }
-//        }
-//        .listStyle(SidebarListStyle())
-//        .toolbar {
-//            ToolbarItem(placement: .navigation) {
-//            }
-//        }
-//    }
-//}
-
 struct MenuContents: View {
     @Binding var presentSidemenu: Bool
-
+    
     var body: some View {
         List {
             NavigationLink(destination: Text("Profile")) {
                 HStack {
-                    Image(uiImage: UIImage(named: "profile")!)
+                    Image(systemName: "person.crop.circle")
+                        .foregroundColor(Color.black)
+                    padding()
                     Text("Profile")
                 }
                 
             }
-            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+            .listRowInsets(EdgeInsets(top: 0, leading: 20, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
-
+            
             NavigationLink(destination: Text("Orders")) {
                 HStack {
-                    Image(uiImage: UIImage(named: "order")!)
+                    Image(systemName: "cart")
+                        .foregroundColor(Color.black)
+                    padding()
                     Text("Orders")
                 }
             }
-            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+            .listRowInsets(EdgeInsets(top: 0, leading: 20, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
-
+            
             NavigationLink(destination: Text("Offer and Promo")) {
                 HStack {
-                    Image(uiImage: UIImage(named: "offer")!)
+                    Image(systemName: "tag")
+                    padding()
                     Text("Offer and Promo")
                 }
             }
-            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+            .listRowInsets(EdgeInsets(top: 0, leading: 20, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
-
+            
             NavigationLink(destination: Text("Privacy policy")) {
                 HStack {
-                    Image(uiImage: UIImage(named: "privacy")!)
+                    Image(systemName: "list.dash.header.rectangle")
+                        .foregroundColor(Color.black)
+                    padding()
                     Text("Privacy policy")
                 }
             }
-            .listRowInsets(EdgeInsets(top:0, leading: 0, bottom: 50, trailing: 0))
+            .listRowInsets(EdgeInsets(top:0, leading: 20, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
-
+            
             NavigationLink(destination: Text("Security")) {
                 HStack {
-                    Image(systemName: "security")
+                    Image(systemName: "shield.righthalf.filled")
+                        .foregroundColor(Color.black)
+                    padding()
                     Text("Security")
                 }
             }
-            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+            .listRowInsets(EdgeInsets(top: 0, leading: 20, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
         }
         .listStyle(SidebarListStyle())

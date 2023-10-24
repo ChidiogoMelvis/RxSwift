@@ -173,39 +173,6 @@ struct ScrollableSegmentedView: View {
     }
 }
 
-struct FoodView: View {
-    var body: some View {
-        Text("Food View")
-            .font(.title)
-            .padding()
-    }
-}
-
-struct DrinksView: View {
-    var body: some View {
-        Text("Drinks View")
-            .font(.title)
-            .padding()
-    }
-}
-
-struct SnacksView: View {
-    var body: some View {
-        Text("Snacks View")
-            .font(.title)
-            .padding()
-    }
-}
-
-struct SauceView: View {
-    var body: some View {
-        Text("Sauce View")
-            .font(.title)
-            .padding()
-    }
-}
-
-
 struct TabBarView: View {
     @Binding var selectedTab: Int
     var body: some View {
@@ -230,61 +197,5 @@ struct TabBarView: View {
                 }
         }
         .accentColor(Color(hex: 0xFA4A0C))
-    }
-}
-
-struct HomeView: View {
-    @State var presentSidemenu = false
-    @State var selectedTab = 0
-    @State var searchText: String = ""
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text("Delicious \nfood for you")
-                .padding(.top, 80)
-                .padding(.leading, 20)
-                .lineLimit(2)
-                .fontWeight(.bold)
-                .foregroundColor(.black)
-                .font(.system(size: 35))
-            HStack(alignment: .center) {
-                Image(systemName: "magnifyingglass")
-                    .foregroundColor(.gray)
-                TextField("Search", text: $searchText)
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 5)
-            }
-            .frame(width: 300, height: 30)
-            .padding()
-            .background(Color(.systemGray6))
-            .cornerRadius(30)
-            .padding()
-            ScrollableSegmentedView()
-            Spacer()
-        }
-    }
-}
-
-
-struct HeartView: View {
-    var body: some View {
-        Color.red
-            .edgesIgnoringSafeArea(.all)
-        //Text("")
-    }
-}
-
-struct UserView: View {
-    var body: some View {
-        Color.brown
-            .edgesIgnoringSafeArea(.all)
-        //Text("")
-    }
-}
-
-struct UserHistoryView: View {
-    var body: some View {
-        Color.pink
-            .edgesIgnoringSafeArea(.all)
-        //Text("")
     }
 }

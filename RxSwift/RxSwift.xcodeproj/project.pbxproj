@@ -10,6 +10,14 @@
 		04086C282ADE11B500F45F09 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04086C272ADE11B500F45F09 /* ContentView.swift */; };
 		04086C2C2ADE9A0000F45F09 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04086C2B2ADE9A0000F45F09 /* CustomTextField.swift */; };
 		04086C2F2ADE9D2300F45F09 /* SecureCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04086C2E2ADE9D2300F45F09 /* SecureCustomTextField.swift */; };
+		046CCB5F2AE887380063596B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCB5E2AE887380063596B /* HomeView.swift */; };
+		046CCB612AE8874D0063596B /* HeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCB602AE8874D0063596B /* HeartView.swift */; };
+		046CCB632AE887630063596B /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCB622AE887630063596B /* UserView.swift */; };
+		046CCB652AE887850063596B /* UserHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCB642AE887850063596B /* UserHistoryView.swift */; };
+		046CCB682AE888480063596B /* FoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCB672AE888480063596B /* FoodView.swift */; };
+		046CCB6A2AE8885B0063596B /* DrinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCB692AE8885B0063596B /* DrinksView.swift */; };
+		046CCB6C2AE888690063596B /* SnacksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCB6B2AE888690063596B /* SnacksView.swift */; };
+		046CCB6E2AE888790063596B /* SauceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CCB6D2AE888790063596B /* SauceView.swift */; };
 		04A1E41E2ADB4DB3008EDE43 /* RxSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1E41D2ADB4DB3008EDE43 /* RxSwiftApp.swift */; };
 		04A1E4202ADB4DB3008EDE43 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1E41F2ADB4DB3008EDE43 /* SplashView.swift */; };
 		04A1E4222ADB4DB4008EDE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A1E4212ADB4DB4008EDE43 /* Assets.xcassets */; };
@@ -44,6 +52,14 @@
 		04086C272ADE11B500F45F09 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04086C2B2ADE9A0000F45F09 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		04086C2E2ADE9D2300F45F09 /* SecureCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureCustomTextField.swift; sourceTree = "<group>"; };
+		046CCB5E2AE887380063596B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		046CCB602AE8874D0063596B /* HeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartView.swift; sourceTree = "<group>"; };
+		046CCB622AE887630063596B /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		046CCB642AE887850063596B /* UserHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHistoryView.swift; sourceTree = "<group>"; };
+		046CCB672AE888480063596B /* FoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodView.swift; sourceTree = "<group>"; };
+		046CCB692AE8885B0063596B /* DrinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksView.swift; sourceTree = "<group>"; };
+		046CCB6B2AE888690063596B /* SnacksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacksView.swift; sourceTree = "<group>"; };
+		046CCB6D2AE888790063596B /* SauceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceView.swift; sourceTree = "<group>"; };
 		04A1E41A2ADB4DB3008EDE43 /* RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A1E41D2ADB4DB3008EDE43 /* RxSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftApp.swift; sourceTree = "<group>"; };
 		04A1E41F2ADB4DB3008EDE43 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -111,6 +127,28 @@
 			path = ReusableViews;
 			sourceTree = "<group>";
 		};
+		046CCB662AE888170063596B /* TabBars */ = {
+			isa = PBXGroup;
+			children = (
+				046CCB5E2AE887380063596B /* HomeView.swift */,
+				046CCB602AE8874D0063596B /* HeartView.swift */,
+				046CCB622AE887630063596B /* UserView.swift */,
+				046CCB642AE887850063596B /* UserHistoryView.swift */,
+			);
+			path = TabBars;
+			sourceTree = "<group>";
+		};
+		046CCB6F2AE888E80063596B /* ScrollableSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				046CCB692AE8885B0063596B /* DrinksView.swift */,
+				046CCB6B2AE888690063596B /* SnacksView.swift */,
+				046CCB6D2AE888790063596B /* SauceView.swift */,
+				046CCB672AE888480063596B /* FoodView.swift */,
+			);
+			path = ScrollableSegmentedControl;
+			sourceTree = "<group>";
+		};
 		04A1E4112ADB4DB3008EDE43 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +176,8 @@
 				04A1E41F2ADB4DB3008EDE43 /* SplashView.swift */,
 				04A1E4492ADB5376008EDE43 /* SignupLoginView.swift */,
 				04086C272ADE11B500F45F09 /* ContentView.swift */,
+				046CCB6F2AE888E80063596B /* ScrollableSegmentedControl */,
+				046CCB662AE888170063596B /* TabBars */,
 				04086C2D2ADE9A0900F45F09 /* ReusableViews */,
 				04086C252ADE0FA500F45F09 /* UserViews */,
 				04086C262ADE117900F45F09 /* Extensions */,
@@ -304,12 +344,20 @@
 			files = (
 				04A1E4522ADCB5D3008EDE43 /* SignupView.swift in Sources */,
 				04086C282ADE11B500F45F09 /* ContentView.swift in Sources */,
+				046CCB682AE888480063596B /* FoodView.swift in Sources */,
+				046CCB612AE8874D0063596B /* HeartView.swift in Sources */,
 				04A1E4202ADB4DB3008EDE43 /* SplashView.swift in Sources */,
+				046CCB5F2AE887380063596B /* HomeView.swift in Sources */,
+				046CCB6A2AE8885B0063596B /* DrinksView.swift in Sources */,
 				04A1E44E2ADB5C47008EDE43 /* Color.swift in Sources */,
 				04A1E44A2ADB5376008EDE43 /* SignupLoginView.swift in Sources */,
+				046CCB6C2AE888690063596B /* SnacksView.swift in Sources */,
+				046CCB632AE887630063596B /* UserView.swift in Sources */,
 				04086C2C2ADE9A0000F45F09 /* CustomTextField.swift in Sources */,
 				04086C2F2ADE9D2300F45F09 /* SecureCustomTextField.swift in Sources */,
+				046CCB6E2AE888790063596B /* SauceView.swift in Sources */,
 				04A1E4502ADCB5AA008EDE43 /* LoginView.swift in Sources */,
+				046CCB652AE887850063596B /* UserHistoryView.swift in Sources */,
 				04A1E41E2ADB4DB3008EDE43 /* RxSwiftApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

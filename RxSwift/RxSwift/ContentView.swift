@@ -63,62 +63,71 @@ struct SideMenuView: View {
 
 struct MenuContents: View {
     @Binding var presentSidemenu: Bool
-    
+
     var body: some View {
         List {
             NavigationLink(destination: Text("Profile")) {
                 HStack {
                     Image(systemName: "person.crop.circle")
                         .foregroundColor(Color.black)
-                    padding()
+                        .padding()
                     Text("Profile")
+                        .fixedSize(horizontal: true, vertical: false)
                 }
-                
+                //.listRowBackground(Color.orange)
             }
-            .listRowInsets(EdgeInsets(top: 0, leading: 20, bottom: 50, trailing: 0))
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
-            
+
             NavigationLink(destination: Text("Orders")) {
                 HStack {
                     Image(systemName: "cart")
                         .foregroundColor(Color.black)
-                    padding()
+                        .padding()
                     Text("Orders")
+                        .fixedSize(horizontal: true, vertical: false)
                 }
+                .listRowBackground(Color.orange)
             }
-            .listRowInsets(EdgeInsets(top: 0, leading: 20, bottom: 50, trailing: 0))
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
-            
+
             NavigationLink(destination: Text("Offer and Promo")) {
                 HStack {
                     Image(systemName: "tag")
-                    padding()
+                        .padding()
                     Text("Offer and Promo")
+                        .fixedSize(horizontal: true, vertical: false)
                 }
+                .listRowBackground(Color.orange)
             }
-            .listRowInsets(EdgeInsets(top: 0, leading: 20, bottom: 50, trailing: 0))
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
-            
+
             NavigationLink(destination: Text("Privacy policy")) {
                 HStack {
                     Image(systemName: "list.dash.header.rectangle")
                         .foregroundColor(Color.black)
-                    padding()
+                        .padding()
                     Text("Privacy policy")
+                        .fixedSize(horizontal: true, vertical: false)
                 }
+                .listRowBackground(Color.orange)
             }
-            .listRowInsets(EdgeInsets(top:0, leading: 20, bottom: 50, trailing: 0))
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
-            
+
             NavigationLink(destination: Text("Security")) {
                 HStack {
                     Image(systemName: "shield.righthalf.filled")
                         .foregroundColor(Color.black)
-                    padding()
+                        .padding()
                     Text("Security")
+                        .fixedSize(horizontal: true, vertical: false)
                 }
+                .listRowBackground(Color.orange)
             }
-            .listRowInsets(EdgeInsets(top: 0, leading: 20, bottom: 50, trailing: 0))
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
         }
         .listStyle(SidebarListStyle())
@@ -128,7 +137,6 @@ struct MenuContents: View {
         }
     }
 }
-
 
 struct SegmentedControlView: View {
     @Binding var selectedTab: Int

@@ -7,36 +7,6 @@
 
 import SwiftUI
 
-//struct ContentView: View {
-//    @State var presentSidemenu = false
-//    @State var selectedTab = 0
-//
-//    var body: some View {
-//        NavigationView {
-//            ZStack {
-//                if presentSidemenu {
-//                    SideMenuView(presentSidemenu: $presentSidemenu)
-//                        .transition(.move(edge: .leading))
-//                        .animation(.default)
-//                }
-//
-//                TabBarView(selectedTab: $selectedTab)
-//                    .opacity(presentSidemenu ? 0 : 1)
-//                Button(action: {
-//                    withAnimation {
-//                        presentSidemenu.toggle()
-//                    }
-//                }) {
-//                    Image(systemName: "text.alignleft")
-//                        .foregroundColor(.black)
-//                        .font(.title)
-//                }
-//                .position(x: 30, y: 20)
-//            }
-//        }
-//    }
-//}
-
 struct ContentView: View {
     @State var presentSidemenu = false
     @State var selectedTab = 0
@@ -79,7 +49,7 @@ struct ContentView_Previews: PreviewProvider {
 
 struct SideMenuView: View {
     @Binding var presentSidemenu: Bool
-
+    
     var body: some View {
         ZStack(alignment: .leading) {
             Color.clear
@@ -97,19 +67,20 @@ struct SideMenuView: View {
                 MenuContents(presentSidemenu: $presentSidemenu)
                     .padding()
             }
-            .frame(width: 250, height: .infinity)
+            .frame(width: 250, height: 850)
             .background(Color(hex: 0xFA4A0C))
-            .padding(.top, -10)
+            .padding(.top)
         }
     }
 }
 
 struct MenuContents: View {
     @Binding var presentSidemenu: Bool
-
+    
     var body: some View {
         List {
-            NavigationLink(destination: Text("Profile")) {
+            NavigationLink(destination: Text("Profile"))
+            {
                 HStack {
                     Image(systemName: "person.crop.circle")
                         .foregroundColor(Color.black)
@@ -120,7 +91,7 @@ struct MenuContents: View {
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
-
+            
             NavigationLink(destination: Text("Orders")) {
                 HStack {
                     Image(systemName: "cart")
@@ -132,10 +103,11 @@ struct MenuContents: View {
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
-
+            
             NavigationLink(destination: Text("Offer and Promo")) {
                 HStack {
                     Image(systemName: "tag")
+                        .foregroundColor(Color.black)
                         .padding()
                     Text("Offer and Promo")
                         .fixedSize(horizontal: true, vertical: false)
@@ -143,7 +115,7 @@ struct MenuContents: View {
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
-
+            
             NavigationLink(destination: Text("Privacy policy")) {
                 HStack {
                     Image(systemName: "list.dash.header.rectangle")
@@ -155,7 +127,7 @@ struct MenuContents: View {
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
-
+            
             NavigationLink(destination: Text("Security")) {
                 HStack {
                     Image(systemName: "shield.righthalf.filled")
@@ -174,7 +146,7 @@ struct MenuContents: View {
             }
         }
         .colorMultiply(Color(hex: 0xFA4A0C))
-            .scrollContentBackground(.hidden)
+        .scrollContentBackground(.hidden)
     }
 }
 

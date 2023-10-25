@@ -18,7 +18,6 @@ struct ContentView: View {
                     SideMenuView(presentSidemenu: $presentSidemenu)
                         .transition(.move(edge: .leading))
                         .animation(.default)
-                    
                 }
                 
                 TabBarView(selectedTab: $selectedTab)
@@ -54,7 +53,7 @@ struct SideMenuView: View {
                 MenuContents(presentSidemenu: $presentSidemenu)
                     .padding()
             }
-            .frame(width: 250, height: .infinity)
+            .frame(width: 250, height: 850)
             .background(Color(hex: 0xFA4A0C))
             .padding(.top, 50)
         }
@@ -74,7 +73,6 @@ struct MenuContents: View {
                     Text("Profile")
                         .fixedSize(horizontal: true, vertical: false)
                 }
-                //.listRowBackground(Color.orange)
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
@@ -87,7 +85,6 @@ struct MenuContents: View {
                     Text("Orders")
                         .fixedSize(horizontal: true, vertical: false)
                 }
-                .listRowBackground(Color.orange)
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
@@ -99,9 +96,8 @@ struct MenuContents: View {
                     Text("Offer and Promo")
                         .fixedSize(horizontal: true, vertical: false)
                 }
-                .listRowBackground(Color.orange)
             }
-            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+            .listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
 
             NavigationLink(destination: Text("Privacy policy")) {
@@ -112,7 +108,6 @@ struct MenuContents: View {
                     Text("Privacy policy")
                         .fixedSize(horizontal: true, vertical: false)
                 }
-                .listRowBackground(Color.orange)
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
@@ -125,7 +120,6 @@ struct MenuContents: View {
                     Text("Security")
                         .fixedSize(horizontal: true, vertical: false)
                 }
-                .listRowBackground(Color.orange)
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
@@ -135,6 +129,8 @@ struct MenuContents: View {
             ToolbarItem(placement: .navigation) {
             }
         }
+        .colorMultiply(Color(hex: 0xFA4A0C))
+            .scrollContentBackground(.hidden)
     }
 }
 

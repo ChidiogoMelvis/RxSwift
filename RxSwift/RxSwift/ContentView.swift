@@ -91,15 +91,15 @@ struct SideMenuView: View {
                 Image(systemName: "xmark")
                     .foregroundColor(.black)
                     .font(.title)
+                    .position(x: 100, y: 100)
             }
-            .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 0))
             HStack {
                 MenuContents(presentSidemenu: $presentSidemenu)
                     .padding()
             }
-            .frame(width: 250, height: 850)
+            .frame(width: 250, height: .infinity)
             .background(Color(hex: 0xFA4A0C))
-            .padding(.top, 50)
+            .padding(.top, -10)
         }
     }
 }

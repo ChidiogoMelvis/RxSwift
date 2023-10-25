@@ -7,6 +7,36 @@
 
 import SwiftUI
 
+//struct ContentView: View {
+//    @State var presentSidemenu = false
+//    @State var selectedTab = 0
+//
+//    var body: some View {
+//        NavigationView {
+//            ZStack {
+//                if presentSidemenu {
+//                    SideMenuView(presentSidemenu: $presentSidemenu)
+//                        .transition(.move(edge: .leading))
+//                        .animation(.default)
+//                }
+//
+//                TabBarView(selectedTab: $selectedTab)
+//                    .opacity(presentSidemenu ? 0 : 1)
+//                Button(action: {
+//                    withAnimation {
+//                        presentSidemenu.toggle()
+//                    }
+//                }) {
+//                    Image(systemName: "text.alignleft")
+//                        .foregroundColor(.black)
+//                        .font(.title)
+//                }
+//                .position(x: 30, y: 20)
+//            }
+//        }
+//    }
+//}
+
 struct ContentView: View {
     @State var presentSidemenu = false
     @State var selectedTab = 0
@@ -22,20 +52,24 @@ struct ContentView: View {
                 
                 TabBarView(selectedTab: $selectedTab)
                     .opacity(presentSidemenu ? 0 : 1)
-                Button(action: {
-                    withAnimation {
-                        presentSidemenu.toggle()
+                
+                if !presentSidemenu {
+                    Button(action: {
+                        withAnimation {
+                            presentSidemenu.toggle()
+                        }
+                    }) {
+                        Image(systemName: "text.alignleft")
+                            .foregroundColor(.black)
+                            .font(.title)
                     }
-                }) {
-                    Image(systemName: "text.alignleft")
-                        .foregroundColor(.black)
-                        .font(.title)
+                    .position(x: 30, y: 20)
                 }
-                .position(x: 30, y: 20)
             }
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -45,10 +79,20 @@ struct ContentView_Previews: PreviewProvider {
 
 struct SideMenuView: View {
     @Binding var presentSidemenu: Bool
-    
+
     var body: some View {
         ZStack(alignment: .leading) {
             Color.clear
+            Button(action: {
+                withAnimation {
+                    presentSidemenu.toggle()
+                }
+            }) {
+                Image(systemName: "xmark")
+                    .foregroundColor(.black)
+                    .font(.title)
+            }
+            .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 0))
             HStack {
                 MenuContents(presentSidemenu: $presentSidemenu)
                     .padding()

@@ -63,9 +63,9 @@ struct SideMenuView: View {
                     .font(.title)
                     .position(x: 100, y: 100)
             }
-            HStack {
+            HStack(alignment: .bottom, spacing: 40) {
                 MenuContents(presentSidemenu: $presentSidemenu)
-                    .padding()
+                    .padding(.top, 100)
             }
             .frame(width: 250, height: 850)
             .background(Color(hex: 0xFA4A0C))
@@ -113,7 +113,7 @@ struct MenuContents: View {
                         .fixedSize(horizontal: true, vertical: false)
                 }
             }
-            .listRowInsets(EdgeInsets(top: 0, leading: 10, bottom: 50, trailing: 0))
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
             .listRowSeparator(.hidden)
             
             NavigationLink(destination: Text("Privacy policy")) {

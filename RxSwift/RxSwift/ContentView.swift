@@ -83,69 +83,83 @@ struct MenuContents: View {
             {
                 HStack {
                     Image(systemName: "person.crop.circle")
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.white)
                         .padding()
                     Text("Profile")
+                        .foregroundColor(Color.white)
                         .fixedSize(horizontal: true, vertical: false)
                 }
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-            .listRowSeparator(.hidden)
+            //.listRowSeparator(.hidden)
+            .listRowBackground(Color(hex: 0xFA4A0C))
+            .listRowSeparatorTint(Color.white)
             
             NavigationLink(destination: Text("Orders")) {
                 HStack {
                     Image(systemName: "cart")
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.white)
                         .padding()
                     Text("Orders")
+                        .foregroundColor(Color.white)
                         .fixedSize(horizontal: true, vertical: false)
                 }
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-            .listRowSeparator(.hidden)
+            //.listRowSeparator(.hidden)
+            .listRowBackground(Color(hex: 0xFA4A0C))
+            .listRowSeparatorTint(Color.white)
             
             NavigationLink(destination: Text("Offer and Promo")) {
                 HStack {
                     Image(systemName: "tag")
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.white)
                         .padding()
                     Text("Offer and Promo")
+                        .foregroundColor(Color.white)
                         .fixedSize(horizontal: true, vertical: false)
                 }
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-            .listRowSeparator(.hidden)
+            //.listRowSeparator(.hidden)
+            .listRowBackground(Color(hex: 0xFA4A0C))
+            .listRowSeparatorTint(Color.white)
             
             NavigationLink(destination: Text("Privacy policy")) {
                 HStack {
                     Image(systemName: "list.dash.header.rectangle")
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.white)
                         .padding()
                     Text("Privacy policy")
+                        .foregroundColor(Color.white)
                         .fixedSize(horizontal: true, vertical: false)
                 }
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-            .listRowSeparator(.hidden)
+            //.listRowSeparator(.hidden)
+            .listRowBackground(Color(hex: 0xFA4A0C))
+            .listRowSeparatorTint(Color.white)
             
             NavigationLink(destination: Text("Security")) {
                 HStack {
                     Image(systemName: "shield.righthalf.filled")
-                        .foregroundColor(Color.black)
+                        .foregroundColor(Color.white)
                         .padding()
                     Text("Security")
+                        .foregroundColor(Color.white)
                         .fixedSize(horizontal: true, vertical: false)
                 }
             }
+            
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-            .listRowSeparator(.hidden)
+            .listRowBackground(Color(hex: 0xFA4A0C))
+            .listRowSeparatorTint(Color.white)
         }
         .listStyle(SidebarListStyle())
         .toolbar {
             ToolbarItem(placement: .navigation) {
             }
         }
-        .colorMultiply(Color(hex: 0xFA4A0C))
         .scrollContentBackground(.hidden)
     }
 }

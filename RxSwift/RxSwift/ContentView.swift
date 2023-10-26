@@ -89,11 +89,12 @@ struct MenuContents: View {
                         .foregroundColor(Color.white)
                         .fixedSize(horizontal: true, vertical: false)
                 }
+
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-            //.listRowSeparator(.hidden)
             .listRowBackground(Color(hex: 0xFA4A0C))
             .listRowSeparatorTint(Color.white)
+            .padding([.trailing], -30.0)
             
             NavigationLink(destination: Text("Orders")) {
                 HStack {
@@ -106,9 +107,9 @@ struct MenuContents: View {
                 }
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-            //.listRowSeparator(.hidden)
             .listRowBackground(Color(hex: 0xFA4A0C))
             .listRowSeparatorTint(Color.white)
+            .padding([.trailing], -30.0)
             
             NavigationLink(destination: Text("Offer and Promo")) {
                 HStack {
@@ -121,9 +122,9 @@ struct MenuContents: View {
                 }
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-            //.listRowSeparator(.hidden)
             .listRowBackground(Color(hex: 0xFA4A0C))
             .listRowSeparatorTint(Color.white)
+            .padding([.trailing], -30.0)
             
             NavigationLink(destination: Text("Privacy policy")) {
                 HStack {
@@ -136,9 +137,9 @@ struct MenuContents: View {
                 }
             }
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-            //.listRowSeparator(.hidden)
             .listRowBackground(Color(hex: 0xFA4A0C))
             .listRowSeparatorTint(Color.white)
+            .padding([.trailing], -30.0)
             
             NavigationLink(destination: Text("Security")) {
                 HStack {
@@ -150,10 +151,10 @@ struct MenuContents: View {
                         .fixedSize(horizontal: true, vertical: false)
                 }
             }
-            
             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
             .listRowBackground(Color(hex: 0xFA4A0C))
             .listRowSeparatorTint(Color.white)
+            .padding([.trailing], -30.0)
         }
         .listStyle(SidebarListStyle())
         .toolbar {

@@ -12,6 +12,9 @@ struct HomeView: View {
         @State var selectedTab = 0
         @State var searchText: String = ""
         var body: some View {
+            Color(hex: 0xEDEDED)
+                .edgesIgnoringSafeArea(.all)
+                .overlay (
             VStack(alignment: .leading) {
                 Text("Delicious \nfood for you")
                     .padding(.top, 80)
@@ -35,6 +38,7 @@ struct HomeView: View {
                 ScrollableSegmentedView()
                 Spacer()
             }
+            )
         }
 }
 

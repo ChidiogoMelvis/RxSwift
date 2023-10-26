@@ -8,12 +8,23 @@
 import SwiftUI
 
 struct FoodView: View {
-    let images: [Image] = [Image(uiImage: UIImage(named: "food1")!), Image(uiImage: UIImage(named: "food2")!), Image(uiImage: UIImage(named: "food3")!), Image(uiImage: UIImage(named: "food4")!) ]
-    var body: some View {
-        Text("Food View")
-            .font(.title)
-            .padding()
-    }
+    let imageNames = ["food1", "food2", "food3", "food4"]
+
+        var body: some View {
+            ScrollView(.horizontal) {
+                LazyHGrid(rows:
+                    [GridItem(.flexible(minimum: 200, maximum: 200)),
+                    ], spacing: -200) {
+                    ForEach(imageNames, id: \.self) { imageName in
+                        Image(imageName)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 220, height: 321)
+                    }
+                }
+                .padding(.top, 50)
+            }
+        }
 }
 
 struct FoodView_Previews: PreviewProvider {

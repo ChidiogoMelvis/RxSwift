@@ -120,7 +120,7 @@ struct MenuContents: View {
                         .fixedSize(horizontal: true, vertical: false)
                 }
             }
-            .listRowInsets(EdgeInsets(top: 20, leading: 0, bottom: 2, trailing: 0))
+            .listRowInsets(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
             .listRowBackground(Color(hex: 0xFA4A0C))
             .listRowSeparatorTint(Color.white)
             .padding([.trailing], -30.0)

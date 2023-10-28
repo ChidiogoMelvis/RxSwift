@@ -14,11 +14,11 @@ struct LoginView: View {
     @State var isPresentNextScreen = false
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading) {
+            VStack() {
                 Text("Email address")
                     .foregroundColor(Color.gray)
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 0)
+                    .padding()
+                    .padding(.leading, -200)
                 ZStack(alignment: .bottom) {
                     Rectangle()
                         .frame(height: 1)
@@ -29,8 +29,8 @@ struct LoginView: View {
                 .padding(.bottom, 50)
                 Text("Password")
                     .foregroundColor(Color.gray)
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 5)
+                    .padding()
+                    .padding(.leading, -200)
                 ZStack(alignment: .bottom) {
                     Rectangle()
                         .frame(height: 1)
@@ -39,20 +39,9 @@ struct LoginView: View {
                     SecureCustomTextField(text: $password, placeholder: "Enter password")
                 }
                 Spacer().frame(height: 180)
-                Button(action: {
+                CustomButton(title: "Login", action: {
                     isPresentNextScreen.toggle()
-                }) {
-                    Text("Login")
-                        .font(.system(size: 20, weight: .medium))
-                        .foregroundColor(Color.white)
-                        .padding(.horizontal, 20)
-                        .frame(width: 300, height: 50)
-                        .background(Color(hex: 0xFA4A0C))
-                        .cornerRadius(25)
-                        .position(x: 190)
-                        .frame(width: 300, height: 50)
-                        .controlSize(.large)
-                }
+                })
                 .fullScreenCover(isPresented: $isPresentNextScreen) {
                     ContentView()
                 }

@@ -78,7 +78,7 @@ struct MenuContents: View {
     
     var body: some View {
         List {
-            NavigationLink(destination: Text("Profile"))
+            NavigationLink(destination: ProfileView())
             {
                 HStack {
                     Image(systemName: "person.crop.circle")
@@ -95,7 +95,7 @@ struct MenuContents: View {
             .listRowSeparatorTint(Color.white)
             .padding([.trailing], -30.0)
             
-            NavigationLink(destination: Text("Orders")) {
+            NavigationLink(destination: OrdersView()) {
                 HStack {
                     Image(systemName: "cart")
                         .foregroundColor(Color.white)
@@ -110,7 +110,7 @@ struct MenuContents: View {
             .listRowSeparatorTint(Color.white)
             .padding([.trailing], -30.0)
             
-            NavigationLink(destination: Text("Offer and Promo")) {
+            NavigationLink(destination: OfferPromoView()) {
                 HStack {
                     Image(systemName: "tag")
                         .foregroundColor(Color.white)
@@ -125,7 +125,7 @@ struct MenuContents: View {
             .listRowSeparatorTint(Color.white)
             .padding([.trailing], -30.0)
             
-            NavigationLink(destination: Text("Privacy policy")) {
+            NavigationLink(destination: PrivacyPolicyView()) {
                 HStack {
                     Image(systemName: "list.dash.header.rectangle")
                         .foregroundColor(Color.white)
@@ -140,7 +140,7 @@ struct MenuContents: View {
             .listRowSeparatorTint(Color.white)
             .padding([.trailing], -30.0)
             
-            NavigationLink(destination: Text("Security")) {
+            NavigationLink(destination: SecurityView()) {
                 HStack {
                     Image(systemName: "shield.righthalf.filled")
                         .foregroundColor(Color.white)

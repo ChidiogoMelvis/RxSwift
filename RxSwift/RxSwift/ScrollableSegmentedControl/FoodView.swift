@@ -9,14 +9,12 @@ import SwiftUI
 
 struct FoodView: View {
     let imageNames = ["food1","food2","food3","food4"]
-
-
-
+    
     var body: some View {
         Color(hex: 0xEDEDED)
             .edgesIgnoringSafeArea(.all)
             .overlay (
-                ScrollView(.horizontal) {
+                ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: -50) {
                         ForEach(imageNames, id: \.self) { imageName in
                             Image(imageName)
@@ -25,11 +23,8 @@ struct FoodView: View {
                                 .frame(width: 220, height: 321)
                         }
                     }
-                    //.padding(.horizontal, -10)
                     .padding(.top, 50)
                 }
-
-
             )
     }
 }
@@ -40,15 +35,3 @@ struct FoodView_Previews: PreviewProvider {
         FoodView()
     }
 }
-
-//struct ImageItemView: View {
-//    let imageName: String
-//
-//    var body: some View {
-//        Image(imageName)
-//            .resizable()
-//            .aspectRatio(contentMode: .fill)
-//            .frame(width: 100, height: 100)
-//    }
-//}
-

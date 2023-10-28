@@ -54,3 +54,6 @@ struct SignupSigninView_Previews: PreviewProvider {
         SignupLoginView()
     }
 }
+
+//.border(selectedTab == 0 ? Color(hex: 0xEDEDED) : Color.clear, width: 2)
+//.border(selectedTab == 1 ? Color(hex: 0xEDEDED) : Color.clear, width: 2)

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SignupLoginView: View {
     @State var selectedTab = 0
-    let customColor = Color(hex: 0xEDEDED)
     
     var body: some View {
         Color(hex: 0xEDEDED)
@@ -35,6 +34,7 @@ struct SignupLoginView: View {
                             selectedTab = 1
                         }
                 }
+                .background(Color.white)
                 
                 if selectedTab == 0 {
                     LoginView()
@@ -54,6 +54,3 @@ struct SignupSigninView_Previews: PreviewProvider {
         SignupLoginView()
     }
 }
-
-//.border(selectedTab == 0 ? Color(hex: 0xEDEDED) : Color.clear, width: 2)
-//.border(selectedTab == 1 ? Color(hex: 0xEDEDED) : Color.clear, width: 2)

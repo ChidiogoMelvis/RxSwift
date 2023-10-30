@@ -22,10 +22,10 @@ struct SignupView: View {
                 Rectangle()
                     .frame(height: 1)
                     .foregroundColor(Color.black)
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, 10)
                 CustomTextField(email: $email, placeholder: "Enter email")
             }
-            .padding(.bottom, 40)
+            .padding(.bottom, 5)
             Text("Password")
                 .foregroundColor(Color.gray)
                 .padding()
@@ -38,7 +38,7 @@ struct SignupView: View {
                 SecureCustomTextField(text: $password, placeholder: "Enter password")
             }
             
-            .padding(.bottom, 40)
+            .padding(.bottom, 5)
             Text("Re-enter Password")
                 .foregroundColor(Color.gray)
                 .padding()
@@ -50,9 +50,8 @@ struct SignupView: View {
                     .padding(.horizontal, 16)
                 SecureField("Re-enter password", text: $password)
                     .padding(.horizontal, 16)
-                    .padding(.bottom, 5)
             }
-            Spacer().frame(height: 120)
+            Spacer().frame(height: 40)
             CustomButton(title: "Sign up", action: {
                 //isPresentNextScreen.toggle()
             })

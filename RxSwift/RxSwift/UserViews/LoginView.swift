@@ -26,7 +26,7 @@ struct LoginView: View {
                         .padding(.horizontal, 16)
                     CustomTextField(email: $email, placeholder: "Enter email")
                 }
-                .padding(.bottom, 50)
+                .padding(.bottom, 10)
                 Text("Password")
                     .foregroundColor(Color.gray)
                     .padding()
@@ -38,7 +38,7 @@ struct LoginView: View {
                         .padding(.horizontal, 16)
                     SecureCustomTextField(text: $password, placeholder: "Enter password")
                 }
-                Spacer().frame(height: 180)
+                Spacer().frame(height: 100)
                 CustomButton(title: "Login", action: {
                     isPresentNextScreen.toggle()
                 })

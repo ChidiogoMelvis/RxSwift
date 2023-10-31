@@ -8,38 +8,33 @@
 import SwiftUI
 
 struct ProfileView: View {
-//    @State var selectedOptions: [PaymentOptions] = []
-//    enum PaymentOptions: String, CaseIterable {
-//        case card
-//        case bankAccount
-//        case paypal
-//    }
-    
     var body: some View {
         Color(hex: 0xEDEDED)
             .edgesIgnoringSafeArea(.all)
             .overlay (
-        VStack {
-            Text("Profile")
-                .font(.headline)
-                .padding()
-            VStack(alignment: .leading) {
-                Text("Information")
-                    .padding(.leading, -30)
-                    .foregroundColor(.black)
-                    .font(.headline)
-                PersonalDetailsView()
-                    .padding(.leading, -50)
-            }
-            
-            Text("Payment Method")
-                .font(.headline)
-                .padding()
-           
-            PaymentView()
-          Spacer()
-        }
-        )
+                VStack {
+                    Text("Profile")
+                        .font(.headline)
+                        .padding()
+                    VStack(alignment: .leading) {
+                        Text("Information")
+                            .padding(.leading, -30)
+                            .foregroundColor(.black)
+                            .font(.headline)
+                        PersonalDetailsView()
+                            .padding(.leading, -50)
+                    }
+                    
+                    Text("Payment Method")
+                        .font(.headline)
+                        .padding()
+                        .padding(.leading, -180)
+                    
+                    PaymentView()
+                        .padding(.leading, -0)
+                    Spacer()
+                }
+            )
     }
 }
 
@@ -53,12 +48,12 @@ struct PersonalDetailsView: View {
     var body: some View {
         
         HStack {
-                Image(systemName: "person.circle")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 60, height: 60)
-                    .padding(.bottom, 40)
-                    .padding()
+            Image(systemName: "person.circle")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 60, height: 60)
+                .padding(.bottom, 40)
+                .padding()
             VStack(alignment: .leading) {
                 Text("Profile name")
                     .foregroundColor(.black)
@@ -84,47 +79,50 @@ struct PersonalDetailsView: View {
 
 struct PaymentView: View {
     @State var selectedOptions: PaymentOptions?
-
+    
     enum PaymentOptions: String, CaseIterable {
         case card
         case bankAccount
         case paypal
     }
+    
+    let paymentsArray = ["bank", "card", "paypal"]
+    
     var body: some View {
-    VStack {
+        VStack(alignment: .leading) {
             ForEach(PaymentOptions.allCases, id: \.self) { option in
                 Button(action: {
-                  selectedOptions = option
+                    selectedOptions = option
                 }) {
                     HStack {
                         Image(systemName: option == selectedOptions ? "circle.circle.fill" : "circle")
                             .resizable()
                             .foregroundColor(Color(hex: 0xFA4A0C))
                             .frame(width: 30, height: 30)
-                        Text(option.rawValue.capitalized)
+                            .padding(.top, 30)
+                            .padding(.bottom, 30)
+                            .padding(.leading, 30)
+                        ForEach(paymentsArray, id: \.self) { paymentArray in
+                            Image(paymentArray)
+                                .resizable()
+                                .foregroundColor(Color.black)
+                                .frame(width: 40, height: 40)
+                        }
+                        Text(option.rawValue.localizedCapitalized)
                             .foregroundColor(.black)
+                            .padding(.bottom, 30)
+                            .padding(.top, 30)
+                            .padding(.trailing, 30)
                     }
                 }
             }
-            if let selectedOptions = selectedOptions {
-                Text("\(selectedOptions.rawValue.capitalized)")
-                    .font(.headline)
-            }
+            //            if let selectedOptions = selectedOptions {
+            //                Text("\(selectedOptions.rawValue.capitalized)")
+            //                    .font(.headline)
+            //            }
         }
+        .background(Color.white)
+        .cornerRadius(20)
+        .padding()
     }
 }
-
-//struct PaymentOptionRow: View {
-//    let option: PaymentOptions
-//    @Binding var isSelected: Bool
-//    var body: some View {
-//        HStack {
-//            Toggle(isOn: $isSelected) {
-//                Text(option.rawValue.capitalized)
-//            }
-//            Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
-//                .resizable()
-//                .frame(width: 30, height: 30)
-//        }
-//    }
-//}

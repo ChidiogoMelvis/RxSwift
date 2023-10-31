@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct ProfileView: View {
+//    @State var selectedOptions: [PaymentOptions] = []
+//    enum PaymentOptions: String, CaseIterable {
+//        case card
+//        case bankAccount
+//        case paypal
+//    }
+    
     var body: some View {
         Color(hex: 0xEDEDED)
             .edgesIgnoringSafeArea(.all)
@@ -24,8 +31,13 @@ struct ProfileView: View {
                 PersonalDetailsView()
                     .padding(.leading, -50)
             }
-            Spacer()
             
+            Text("Payment Method")
+                .font(.headline)
+                .padding()
+           
+            PaymentView()
+          Spacer()
         }
         )
     }
@@ -69,3 +81,50 @@ struct PersonalDetailsView: View {
         .padding()
     }
 }
+
+struct PaymentView: View {
+    @State var selectedOptions: PaymentOptions?
+
+    enum PaymentOptions: String, CaseIterable {
+        case card
+        case bankAccount
+        case paypal
+    }
+    var body: some View {
+    VStack {
+            ForEach(PaymentOptions.allCases, id: \.self) { option in
+                Button(action: {
+                  selectedOptions = option
+                }) {
+                    HStack {
+                        Image(systemName: option == selectedOptions ? "circle.circle.fill" : "circle")
+                            .resizable()
+                            .foregroundColor(Color(hex: 0xFA4A0C))
+                            .frame(width: 30, height: 30)
+                        Text(option.rawValue.capitalized)
+                            .foregroundColor(.black)
+                    }
+                }
+            }
+            if let selectedOptions = selectedOptions {
+                Text("\(selectedOptions.rawValue.capitalized)")
+                    .font(.headline)
+            }
+        }
+    }
+}
+
+//struct PaymentOptionRow: View {
+//    let option: PaymentOptions
+//    @Binding var isSelected: Bool
+//    var body: some View {
+//        HStack {
+//            Toggle(isOn: $isSelected) {
+//                Text(option.rawValue.capitalized)
+//            }
+//            Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
+//                .resizable()
+//                .frame(width: 30, height: 30)
+//        }
+//    }
+//}

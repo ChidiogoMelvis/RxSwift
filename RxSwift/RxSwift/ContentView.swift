@@ -90,6 +90,8 @@ struct MenuContents: View {
                 }
 
             }
+            .accentColor(.black)
+            .navigationBarTitle("", displayMode: .inline)
             .listRowInsets(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
             .listRowBackground(Color(hex: 0xFA4A0C))
             .listRowSeparatorTint(Color.white)

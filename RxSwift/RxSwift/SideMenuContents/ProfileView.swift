@@ -15,23 +15,28 @@ struct ProfileView: View {
                 VStack {
                     Text("Profile")
                         .font(.headline)
-                        .padding()
-                    VStack(alignment: .leading) {
+                        //.padding()
+                    VStack(alignment: .leading, spacing: 10) {
                         Text("Information")
+                            .padding(.top, 30)
                             .padding(.leading, -30)
                             .foregroundColor(.black)
                             .font(.headline)
                         PersonalDetailsView()
                             .padding(.leading, -50)
                     }
-                    
-                    Text("Payment Method")
-                        .font(.headline)
-                        .padding()
-                        .padding(.leading, -180)
-                    PaymentView()
-                        .padding(.leading, -45)
-                    Spacer()
+                    VStack(alignment: .leading, spacing: 10)  {
+                        Text("Payment Method")
+                            .font(.headline)
+                            .padding(.leading, -30)
+                        PaymentView()
+                            .zIndex(1)
+                            .padding(.leading, -45)
+                    }
+                    CustomButton(title: "Update") {
+                        
+                    }
+                    .padding(.top, 40)
                 }
           )
     }

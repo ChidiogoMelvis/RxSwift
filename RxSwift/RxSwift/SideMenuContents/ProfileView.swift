@@ -31,7 +31,7 @@ struct ProfileView: View {
                         .padding(.leading, -180)
                     
                     PaymentView()
-                        .padding(.leading, -0)
+                        .padding(.leading, -30)
                     Spacer()
                 }
             )
@@ -79,35 +79,41 @@ struct PersonalDetailsView: View {
 
 struct PaymentView: View {
     @State var selectedOptions: PaymentOptions?
-    
+
     enum PaymentOptions: String, CaseIterable {
         case card
         case bankAccount
         case paypal
     }
-    
-    let paymentsArray = ["bank", "card", "paypal"]
-    
+
+    let paymentImages: [PaymentOptions: String] = [
+        .card: "card",
+        .bankAccount: "bank",
+        .paypal: "paypal"
+    ]
+
     var body: some View {
         VStack(alignment: .leading) {
             ForEach(PaymentOptions.allCases, id: \.self) { option in
                 Button(action: {
                     selectedOptions = option
                 }) {
-                    HStack {
+                    HStack(spacing: 40) {
                         Image(systemName: option == selectedOptions ? "circle.circle.fill" : "circle")
                             .resizable()
-                            .foregroundColor(Color(hex: 0xFA4A0C))
                             .frame(width: 30, height: 30)
+                            .foregroundColor(Color(hex: 0xFA4A0C))
                             .padding(.top, 30)
                             .padding(.bottom, 30)
                             .padding(.leading, 30)
-                        ForEach(paymentsArray, id: \.self) { paymentArray in
-                            Image(paymentArray)
+
+                        if let imageName = paymentImages[option] {
+                            Image(imageName)
                                 .resizable()
-                                .foregroundColor(Color.black)
                                 .frame(width: 40, height: 40)
+                                .colorMultiply(.black)
                         }
+
                         Text(option.rawValue.localizedCapitalized)
                             .foregroundColor(.black)
                             .padding(.bottom, 30)
@@ -116,10 +122,6 @@ struct PaymentView: View {
                     }
                 }
             }
-            //            if let selectedOptions = selectedOptions {
-            //                Text("\(selectedOptions.rawValue.capitalized)")
-            //                    .font(.headline)
-            //            }
         }
         .background(Color.white)
         .cornerRadius(20)

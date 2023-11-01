@@ -29,12 +29,11 @@ struct ProfileView: View {
                         .font(.headline)
                         .padding()
                         .padding(.leading, -180)
-                    
                     PaymentView()
-                        .padding(.leading, -30)
+                        .padding(.leading, -45)
                     Spacer()
                 }
-            )
+          )
     }
 }
 
@@ -79,19 +78,19 @@ struct PersonalDetailsView: View {
 
 struct PaymentView: View {
     @State var selectedOptions: PaymentOptions?
-
+    
     enum PaymentOptions: String, CaseIterable {
         case card
         case bankAccount
         case paypal
     }
-
+    
     let paymentImages: [PaymentOptions: String] = [
         .card: "card",
         .bankAccount: "bank",
         .paypal: "paypal"
     ]
-
+    
     var body: some View {
         VStack(alignment: .leading) {
             ForEach(PaymentOptions.allCases, id: \.self) { option in
@@ -106,19 +105,19 @@ struct PaymentView: View {
                             .padding(.top, 30)
                             .padding(.bottom, 30)
                             .padding(.leading, 30)
-
+                        
                         if let imageName = paymentImages[option] {
                             Image(imageName)
                                 .resizable()
-                                .frame(width: 40, height: 40)
+                                .frame(width: 20, height: 20)
                                 .colorMultiply(.black)
                         }
-
+                        
                         Text(option.rawValue.localizedCapitalized)
                             .foregroundColor(.black)
                             .padding(.bottom, 30)
                             .padding(.top, 30)
-                            .padding(.trailing, 30)
+                            .padding(.trailing, 45)
                     }
                 }
             }

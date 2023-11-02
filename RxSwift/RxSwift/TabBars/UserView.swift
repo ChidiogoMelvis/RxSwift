@@ -17,7 +17,7 @@ struct UserView: View {
                     .foregroundColor(.black)
                     .font(.system(size: 35))
                     .fontWeight(.medium)
-                    .padding(.top, 60)
+                    .padding(.top, 40)
                     .padding(.trailing, 150)
                     
                     HStack {
@@ -33,6 +33,14 @@ struct UserView: View {
                                 .foregroundColor(Color(hex: 0xFA4A0C))
                     }
                 }
+                    PersonalDetailsView()
+                        .padding(.leading, -50)
+                    UserContents()
+                        .padding(.top, -30)
+                        //.padding(.bottom, 100)
+                    CustomButton(title: "Update") {
+                        print("")
+                    }
                     Spacer()
             }
         )
@@ -42,5 +50,55 @@ struct UserView: View {
 struct UserView_Previews: PreviewProvider {
     static var previews: some View {
         UserView()
+    }
+}
+
+struct UserContents: View {
+    var body: some View {
+        List {
+            NavigationLink(destination: Text("Orders"))
+            {
+                HStack {
+                    Text("Orders")
+                        .foregroundColor(Color.black)
+                        .fixedSize(horizontal: true, vertical: false)
+                }
+
+            }
+            .listRowInsets(EdgeInsets(top: 20, leading: 20, bottom: 30, trailing: 30))
+            
+            NavigationLink(destination: Text("Pending reviews")) {
+                HStack {
+                    Text("Pending reviews")
+                        .foregroundColor(Color.black)
+                        .fixedSize(horizontal: true, vertical: false)
+                }
+            }
+            .listRowInsets(EdgeInsets(top: 20, leading: 20, bottom: 30, trailing: 30))
+            
+            NavigationLink(destination: Text("Faq")) {
+                HStack {
+                    Text("Faq")
+                        .foregroundColor(Color.black)
+                        .fixedSize(horizontal: true, vertical: false)
+                }
+            }
+            .listRowInsets(EdgeInsets(top: 20, leading: 20, bottom: 30, trailing: 30))
+            
+            NavigationLink(destination: Text("Help")) {
+                HStack {
+                    Text("Help")
+                        .foregroundColor(Color.black)
+                        .fixedSize(horizontal: true, vertical: false)
+                }
+            }
+            .listRowInsets(EdgeInsets(top: 20, leading: 20, bottom: 30, trailing: 30))
+        }
+        //.listStyle(SidebarListStyle())
+        .toolbar {
+            ToolbarItem(placement: .navigation) {
+            }
+        }
+        .scrollContentBackground(.hidden)
     }
 }

@@ -48,7 +48,6 @@ struct ContentView_Previews: PreviewProvider {
 
 struct SideMenuView: View {
     @Binding var presentSidemenu: Bool
-    
     var body: some View {
         ZStack(alignment: .leading) {
             Color.clear
@@ -75,7 +74,6 @@ struct SideMenuView: View {
 
 struct MenuContents: View {
     @Binding var presentSidemenu: Bool
-    
     var body: some View {
         List {
             NavigationLink(destination: ProfileView())
@@ -181,7 +179,7 @@ struct SegmentedControlView: View {
                         .cornerRadius(10)
                         .onTapGesture {
                             selectedTab = index
-                        }
+                    }
                 }
             }
             .padding(10)
@@ -230,7 +228,7 @@ struct TabBarView: View {
             UserHistoryView()
                 .tabItem {
                     Image(uiImage: UIImage(named: "userHistory")!)
-                }
+            }
         }
         .accentColor(Color(hex: 0xFA4A0C))
     }

@@ -14,14 +14,14 @@ struct UserView: View {
             .overlay (
                 VStack {
                     Text("My Profile")
-                    .foregroundColor(.black)
-                    .font(.system(size: 35))
-                    .fontWeight(.medium)
-                    .padding(.top, 40)
-                    .padding(.trailing, 150)
+                        .foregroundColor(.black)
+                        .font(.system(size: 35))
+                        .fontWeight(.medium)
+                        .padding(.top, 40)
+                        .padding(.trailing, 150)
                     
                     HStack {
-                     Text("Personal details")
+                        Text("Personal details")
                             .foregroundColor(.black)
                             .padding(.top, 10)
                             .padding(.trailing, 130)
@@ -31,19 +31,19 @@ struct UserView: View {
                         } label: {
                             Text("change")
                                 .foregroundColor(Color(hex: 0xFA4A0C))
+                        }
                     }
-                }
                     PersonalDetailsView()
                         .padding(.leading, -50)
                     UserContents()
                         .padding(.top, -30)
-                        //.padding(.bottom, 100)
+                    //.padding(.bottom, 100)
                     CustomButton(title: "Update") {
                         print("")
                     }
                     Spacer()
-            }
-        )
+                }
+            )
     }
 }
 
@@ -62,9 +62,11 @@ struct UserContents: View {
                     Text("Orders")
                         .foregroundColor(Color.black)
                         .fixedSize(horizontal: true, vertical: false)
+                    Divider()
                 }
-
+                
             }
+            .listRowSeparator(.visible)
             .listRowInsets(EdgeInsets(top: 20, leading: 20, bottom: 30, trailing: 30))
             
             NavigationLink(destination: Text("Pending reviews")) {
@@ -72,8 +74,10 @@ struct UserContents: View {
                     Text("Pending reviews")
                         .foregroundColor(Color.black)
                         .fixedSize(horizontal: true, vertical: false)
+                    Divider()
                 }
             }
+            .listRowSeparator(.visible)
             .listRowInsets(EdgeInsets(top: 20, leading: 20, bottom: 30, trailing: 30))
             
             NavigationLink(destination: Text("Faq")) {
@@ -81,8 +85,10 @@ struct UserContents: View {
                     Text("Faq")
                         .foregroundColor(Color.black)
                         .fixedSize(horizontal: true, vertical: false)
+                    Divider()
                 }
             }
+            .listRowSeparator(.visible)
             .listRowInsets(EdgeInsets(top: 20, leading: 20, bottom: 30, trailing: 30))
             
             NavigationLink(destination: Text("Help")) {
@@ -90,15 +96,15 @@ struct UserContents: View {
                     Text("Help")
                         .foregroundColor(Color.black)
                         .fixedSize(horizontal: true, vertical: false)
+                    Divider()
                 }
             }
+            .listRowSeparator(.visible)
             .listRowInsets(EdgeInsets(top: 20, leading: 20, bottom: 30, trailing: 30))
         }
-        //.listStyle(SidebarListStyle())
         .toolbar {
             ToolbarItem(placement: .navigation) {
             }
         }
-        .scrollContentBackground(.hidden)
     }
 }

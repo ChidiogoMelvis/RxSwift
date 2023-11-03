@@ -7,16 +7,18 @@
 
 import SwiftUI
 
-struct HeartView: View {
+struct FavoritesView: View {
     var body: some View {
-        Color.red
+        Color.white
             .edgesIgnoringSafeArea(.all)
-        //Text("")
+            .overlay (
+        Text("Favorites")
+        )
     }
 }
 
 struct HeartView_Previews: PreviewProvider {
     static var previews: some View {
-        HeartView()
+        FavoritesView()
     }
 }

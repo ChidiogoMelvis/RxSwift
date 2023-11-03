@@ -9,9 +9,11 @@ import SwiftUI
 
 struct UserHistoryView: View {
     var body: some View {
-        Color.pink
+        Color.white
             .edgesIgnoringSafeArea(.all)
-        //Text("")
+            .overlay (
+        Text("User history")
+        )
     }
 }
 

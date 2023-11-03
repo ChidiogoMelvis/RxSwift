@@ -217,7 +217,7 @@ struct TabBarView: View {
                     Image(uiImage: UIImage(named: "home")!)
                         .foregroundColor(selectedTab == 0 ? Color(hex: 0xFA4A0C) : .gray)
                 }
-            HeartView()
+            FavoritesView()
                 .tabItem {
                     Image(uiImage: UIImage(named: "heart")!)
                 }

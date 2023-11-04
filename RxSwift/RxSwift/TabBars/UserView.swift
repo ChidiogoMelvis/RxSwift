@@ -55,55 +55,40 @@ struct UserView_Previews: PreviewProvider {
 
 struct UserContents: View {
     var body: some View {
-        List {
-            NavigationLink(destination: Text("Orders"))
-            {
-                HStack {
+        VStack {
+            List {
+                NavigationLink(destination: Text("Orders")) {
                     Text("Orders")
                         .foregroundColor(Color.black)
-                        .fixedSize(horizontal: true, vertical: false)
-                    Divider()
+                    
                 }
-                
             }
-            .listRowSeparator(.visible)
-            .listRowInsets(EdgeInsets(top: 20, leading: 20, bottom: 30, trailing: 30))
-            
-            NavigationLink(destination: Text("Pending reviews")) {
-                HStack {
+        }
+        
+        VStack {
+            List {
+                NavigationLink(destination: Text("Pending reviews")) {
                     Text("Pending reviews")
                         .foregroundColor(Color.black)
-                        .fixedSize(horizontal: true, vertical: false)
-                    Divider()
                 }
             }
-            .listRowSeparator(.visible)
-            .listRowInsets(EdgeInsets(top: 20, leading: 20, bottom: 30, trailing: 30))
-            
-            NavigationLink(destination: Text("Faq")) {
-                HStack {
+        }
+        
+        VStack {
+            List {
+                NavigationLink(destination: Text("Faq")) {
                     Text("Faq")
                         .foregroundColor(Color.black)
-                        .fixedSize(horizontal: true, vertical: false)
-                    Divider()
                 }
             }
-            .listRowSeparator(.visible)
-            .listRowInsets(EdgeInsets(top: 20, leading: 20, bottom: 30, trailing: 30))
-            
-            NavigationLink(destination: Text("Help")) {
-                HStack {
+        }
+        
+        VStack {
+            List {
+                NavigationLink(destination: Text("Help")) {
                     Text("Help")
                         .foregroundColor(Color.black)
-                        .fixedSize(horizontal: true, vertical: false)
-                    Divider()
                 }
-            }
-            .listRowSeparator(.visible)
-            .listRowInsets(EdgeInsets(top: 20, leading: 20, bottom: 30, trailing: 30))
-        }
-        .toolbar {
-            ToolbarItem(placement: .navigation) {
             }
         }
     }

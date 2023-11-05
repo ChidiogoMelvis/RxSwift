@@ -37,7 +37,6 @@ struct UserView: View {
                         .padding(.leading, -50)
                     UserContents()
                         .padding(.top, -30)
-                    //.padding(.bottom, 100)
                     CustomButton(title: "Update") {
                         print("")
                     }
@@ -55,39 +54,37 @@ struct UserView_Previews: PreviewProvider {
 
 struct UserContents: View {
     var body: some View {
-        VStack {
-            List {
-                NavigationLink(destination: Text("Orders")) {
-                    Text("Orders")
-                        .foregroundColor(Color.black)
-                    
+        VStack(alignment: .center) {
+            VStack {
+                List {
+                    NavigationLink(destination: Text("Orders")) {
+                        Text("Orders")
+                    }
                 }
             }
-        }
-        
-        VStack {
-            List {
-                NavigationLink(destination: Text("Pending reviews")) {
-                    Text("Pending reviews")
-                        .foregroundColor(Color.black)
+
+            VStack {
+                List {
+                    NavigationLink(destination: Text("Pending reviews")) {
+                        Text("Pending reviews")
+                        //.foregroundColor(Color.black)
+                    }
                 }
             }
-        }
-        
-        VStack {
-            List {
-                NavigationLink(destination: Text("Faq")) {
-                    Text("Faq")
-                        .foregroundColor(Color.black)
+            VStack {
+                List {
+                    NavigationLink(destination: Text("Faq")) {
+                        Text("Faq")
+                        //.foregroundColor(Color.black)
+                    }
                 }
             }
-        }
-        
-        VStack {
-            List {
-                NavigationLink(destination: Text("Help")) {
-                    Text("Help")
-                        .foregroundColor(Color.black)
+            VStack {
+                List {
+                    NavigationLink(destination: Text("Help")) {
+                        Text("Help")
+                        //.foregroundColor(Color.black)
+                    }
                 }
             }
         }

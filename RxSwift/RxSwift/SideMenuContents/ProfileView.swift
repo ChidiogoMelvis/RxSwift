@@ -49,6 +49,11 @@ struct ProfileView_Previews: PreviewProvider {
 }
 
 struct PersonalDetailsView: View {
+    @State var showEmail = true
+    @State var name = "John Doe"
+    @State var email = "john.doe@example.com"
+    @State var phone = "+234"
+    @State var address = "1234 Main St"
     var body: some View {
         
         HStack {
@@ -59,16 +64,21 @@ struct PersonalDetailsView: View {
                 .padding(.bottom, 40)
                 .padding()
             VStack(alignment: .leading) {
-                Text("Profile name")
+                Text("\(name)")
                     .foregroundColor(.black)
                     .font(.headline)
                     .padding(.bottom, 10)
                     .padding(.trailing, 50)
-                Text("email address")
-                    .foregroundColor(.gray)
-                    .font(.body)
-                    .padding(.bottom, 10)
-                Text("Residential address")
+                if showEmail {
+                    Text("\(email)")
+                        .foregroundColor(.gray)
+                        .font(.body)
+                        .padding(.bottom, 10)
+                        .padding(.trailing, 30)
+                } else {
+                    Text ("\(phone)")
+                }
+                Text("\(address)")
                     .foregroundColor(.gray)
                     .font(.body)
                     .padding(.bottom, 10)

@@ -64,7 +64,7 @@ struct UserContents: View {
                             .foregroundColor(Color.black)
                             .padding(.trailing, 20)
                     }
-                    .frame(width: 300, height: 60)
+                    .frame(width: 315, height: 60)
                     .background(Color.white)
                     .cornerRadius(20)
                 }
@@ -78,7 +78,7 @@ struct UserContents: View {
                             .padding(.trailing, 20)
                             .foregroundColor(Color.black)
                     }
-                    .frame(width: 300, height: 60)
+                    .frame(width: 315, height: 60)
                     .background(Color.white)
                     .cornerRadius(20)
                 }
@@ -92,7 +92,7 @@ struct UserContents: View {
                             .foregroundColor(Color.black)
                             
                     }
-                    .frame(width: 300, height: 60)
+                    .frame(width: 315, height: 60)
                     .background(Color.white)
                     .cornerRadius(20)
                 }
@@ -105,7 +105,7 @@ struct UserContents: View {
                             .foregroundColor(Color.black)
                             .padding(.trailing, 5)
                     }
-                    .frame(width: 300, height: 60)
+                    .frame(width: 315, height: 60)
                     .background(Color.white)
                     .cornerRadius(20)
                 }

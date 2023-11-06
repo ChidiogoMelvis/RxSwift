@@ -12,8 +12,18 @@ struct UserHistoryView: View {
         Color.white
             .edgesIgnoringSafeArea(.all)
             .overlay (
-        Text("User history")
-        )
+                VStack {
+                    Text("History")
+                        .font(.headline)
+                        .padding()
+                    Spacer()
+                    
+                    CustomButton(title: "Start ordering") {
+                        
+                    }
+                    .padding()
+                }
+            )
     }
 }
 

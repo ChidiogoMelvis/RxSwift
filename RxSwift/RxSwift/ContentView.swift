@@ -86,7 +86,7 @@ struct MenuContents: View {
                         .foregroundColor(Color.white)
                         .fixedSize(horizontal: true, vertical: false)
                 }
-
+                
             }
             .accentColor(.black)
             .navigationBarTitle("", displayMode: .inline)
@@ -169,23 +169,25 @@ struct SegmentedControlView: View {
     let segmentNames: [String]
     
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 50) {
-                ForEach(0..<segmentNames.count, id: \.self) { index in
-                    Text(segmentNames[index])
-                        .font(.headline)
-                        .padding(10)
-                        .foregroundColor(selectedTab == index ? Color(hex: 0xFA4A0C) : .gray)
-                        .cornerRadius(10)
-                        .onTapGesture {
-                            selectedTab = index
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 50) {
+                    ForEach(0..<segmentNames.count, id: \.self) { index in
+                        NavigationLink(destination: Text("\(index)")) {
+                            Text(segmentNames[index])
+                                .font(.headline)
+                                .padding(10)
+                                .foregroundColor(selectedTab == index ? Color(hex: 0xFA4A0C) : .gray)
+                                .cornerRadius(10)
+                                .onTapGesture {
+                                    selectedTab = index
+                                }
+                        }
                     }
                 }
+                .padding(10)
             }
-            .padding(10)
         }
     }
-}
 
 struct ScrollableSegmentedView: View {
     @State private var selectedTab = 0
@@ -228,7 +230,7 @@ struct TabBarView: View {
             UserHistoryView()
                 .tabItem {
                     Image(uiImage: UIImage(named: "userHistory")!)
-            }
+                }
         }
         .accentColor(Color(hex: 0xFA4A0C))
     }

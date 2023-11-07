@@ -40,7 +40,10 @@ struct FoodMenuView: View {
     let foodItem: FoodItem
     var body: some View {
         VStack {
-            
+            Spacer()
+            CustomButton(title: "Add to cart") {
+                print("")
+            }
         }
     }
 }

@@ -197,7 +197,7 @@ struct ScrollableSegmentedView: View {
             SegmentedControlView(selectedTab: $selectedTab, segmentNames: ["Food", "Drinks", "Snacks", "Sauce"])
             
             if selectedTab == 0 {
-                FoodView()
+                FoodView(foodItem: FoodItem(image: UIImage(named: "food1")!, name: "", price: 0.1, deliveryInfo: "", returnPolicyInfo: ""))
             } else if selectedTab == 1 {
                 DrinksView()
             } else if selectedTab == 2 {
